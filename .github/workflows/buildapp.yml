@@ -1,7 +1,7 @@
 # Original idea by @ISnackable. Thanks to him for handling the hardest parts!
 # https://github.com/ISnackable/CercubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build and Release uYouPlus
+name: Build and Release uYouPlusExtra
 
 on:
   workflow_dispatch:
@@ -43,7 +43,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build uYouPlus
+    name: Build uYouPlusExtra
 #     runs-on: macos-latest
     runs-on: macos-11
     permissions:
@@ -117,7 +117,7 @@ jobs:
           sed -i '' "27s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "26s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile          
           make package IPA=YouTube.ipa FINALPACKAGE=1
-          (mv "packages/$(ls -t packages | head -n1)" "packages/uYouPlus_${{ env.YOUTUBE_VERSION  }}_${{ env.UYOU_VERSION }}.ipa")
+          (mv "packages/$(ls -t packages | head -n1)" "packages/uYouPlusExtra_${{ env.YOUTUBE_VERSION  }}_${{ env.UYOU_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
           echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
@@ -135,7 +135,7 @@ jobs:
           UYOU_VERSION: ${{ inputs.uyou_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
         with:
-          name: uYouPlus_${{ env.YOUTUBE_VERSION }}_${{ env.UYOU_VERSION }}
+          name: uYouPlusExtra_${{ env.YOUTUBE_VERSION }}_${{ env.UYOU_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
 
