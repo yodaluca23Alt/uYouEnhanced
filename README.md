@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="url">
+  <a href="https://user-images.githubusercontent.com/78001398/271790092-006e81cc-715a-4fbc-aff6-15832e2da8c4.png">
     <img src="https://user-images.githubusercontent.com/78001398/271790092-006e81cc-715a-4fbc-aff6-15832e2da8c4.png" alt="UYOUPLUS_LOGO" width="200" height="200">
   </a>
 </p>
@@ -11,38 +11,31 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%2014.0%2B-yellow" alt="Badge"/>
-    <a href="https://github.com/qnblackcat/uYouPlus/wiki/FAQ"><img src="https://img.shields.io/badge/Question%3F-FAQ-yellow" alt="Badge"></img></a>
-    <a href="https://github.com/qnblackcat/uYouPlus/wiki/FAQ"><img src="https://custom-icon-badges.demolab.com/badge/translate-blue.svg?logo=translate&logoColor=white" alt="Badge"></img></a>
-    
-
-    
+  <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%2014.0%2B-yellow?logo=apple&logoColor=darkgray" alt="Platform Badge">
 </p>
 
 <p align="center">
-    <a href="https://github.com/arichorn/uYouPlusExtra/releases/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/uYouPlusExtra?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/uYouPlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/qnblackcat/uYouPlus/total?label=Download" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/uYouPlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/uYouPlusExtra?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/uYouPlusExtra/issues"><img src="https://custom-icon-badges.demolab.com/github/issues-raw/arichorn/uYouPlusExtra?logo=issue-opened&label=Issues" alt="Badge"></img></a>
-
+    <a href="https://github.com/arichorn/uYouPlusExtra/releases/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/uYouPlusExtra?logo=youtube&color=%23e81e8a&label=Latest%20Release" alt="Latest Release Badge"></a>
+    <a href="https://github.com/arichorn/uYouPlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/qnblackcat/uYouPlus/total?color=%23e81e8a&label=Downloads&logo=cloudsmith&logoColor=white" alt="Download Badge"></a>
+    <a href="https://github.com/arichorn/uYouPlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/uYouPlusExtra?logo=history&logoColor=white&color=%23e81e8a&label=Last%20Commit" alt="Last Commit Badge"></a>
+    <a href="https://github.com/arichorn/uYouPlusExtra/issues"><img src="https://custom-icon-badges.demolab.com/github/issues-raw/arichorn/uYouPlusExtra?logo=issue-opened&logoColor=white&color=%23e81e8a&label=Issues" alt="Issues Badge"></a>
 </p>
 
 <p align="center">
-   <img src="https://img.shields.io/github/stars/arichorn/uYouPlusExtra?style=social" alt="Badge"/>
-   <img src="https://img.shields.io/github/forks/arichorn/uYouPlusExtra?style=social" alt="Badge"/>
-   <a href="https://github.com/arichorn/uYouPlusExtra#support-the-developers"><img src="https://img.shields.io/badge/-Support-lightgrey?style=social&logo=paypal" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/uYouPlusExtra/stargazers"><img src="https://custom-icon-badges.demolab.com/github/stars/arichorn/uYouPlusExtra?logo=star&logoColor=white&color=%23e81e8a&label=Stars" alt="Stars Badge"></img></a>
+<a href="https://github.com/arichorn/uYouPlusExtra/network/members"><img src="https://custom-icon-badges.demolab.com/github/forks/arichorn/uYouPlusExtra?logo=github&logoColor=white&color=%23e81e8a&label=Forks"></a>
 </p>
 
 # Table of Contents
 
-* [Credits](#credits)
-* [Features](#features)
-* [Known issues](#known-issues)
-* [Download](#download)
-* [Installation](#installation)
-* [Support the developers!](#support-the-developers)
-* [FAQ](#faq)
-* [Building](#building-optional)
+[![Credits](https://img.shields.io/badge/Credits-blue?style=flat&logo=square&logoColor=e81e8a)](#credits)<br>
+[![Features](https://img.shields.io/badge/Features-blue?style=flat&logo=square&logoColor=e81e8a)](#features)<br>
+[![Known Issues](https://img.shields.io/badge/Known%20Issues-blue?style=flat&logo=square&logoColor=e81e8a)](#known-issues)<br>
+[![Download](https://img.shields.io/badge/Download-blue?style=flat&logo=square&logoColor=e81e8a)](#download)<br>
+[![Installation](https://img.shields.io/badge/Installation-blue?style=flat&logo=square&logoColor=e81e8a)](#installation)<br>
+[![Support the Developers](https://img.shields.io/badge/Support%20the%20Developers-blue?style=flat&logo=square&logoColor=e81e8a)](#support-the-developers)<br>
+[![FAQ](https://img.shields.io/badge/FAQ-blue?style=flat&logo=square&logoColor=e81e8a)](#faq)<br>
+[![Building (Optional)](https://img.shields.io/badge/Building%20%28Optional%29-blue?style=flat&logo=square&logoColor=e81e8a)](#building-optional)
 
 # Credits
 - Special thanks to all the developers who have worked on uYouPlus/uYouPlusExtra! 
@@ -160,7 +153,7 @@
 <br>
 <a href='https://github.com/dayanch96'>dayanch96</a>
 </td>
-<td id='ssuesskind'>
+<td align="center">
 <a href='https://github.com/ssuesskind'>
 <img src='https://user-images.githubusercontent.com/78001398/271853585-77271641-b825-43b1-af57-d9f5b12fe8ff.png' width='110px;'>
 </a>
@@ -205,7 +198,7 @@
 
 8. **NoYTPremium:** NoYTPremium removes YouTube Premium upsells, preventing the ads and promotions for YouTube Premium from appearing.
 
-9. **YTSpeed:** YTSpeed adds additional playback speed options of 2.25x, 2.5x, 2.75x, and 3x to the YouTube app, providing more flexibility in video playback speed.
+9. **YTSpeed:** YTSpeed adds additional playback speed options of 2.25x, 2.5x, 2.75x, 3x and more to the YouTube app, providing more flexibility in video playback speed.
 
 10. **YTMiniplayerEnabler:** YTMiniplayerEnabler enables the Miniplayer feature for all YouTube videos.
 
@@ -229,6 +222,9 @@
 
 - Issues related to **uYouPlus** can be found [here](https://github.com/qnblackcat/uYouPlus/issues/), or issues related to **uYouPlusExtra** can be found [here](https://github.com/arichorn/uYouPlusExtra/issues/).
 
+**Return YouTube Dislikes**: this tweak can't display dislikes correctly under the Shorts Dislike Button.
+    - workaround: go to `Settings > uYouPlus > Miscellaneous > Enable App Version Spoofer` and once it's enabled. Go to `Version Spoofer Picker` and select `v18.20.3` and this should temporary resolve the issue for the Return YouTube Dislikes tweak.
+
 # Download
 
 - **uYouPlusExtra** (or you can just call it uYou+) requires iOS or iPadOS 14.0 or later. The latest version of **uYouPlusExtra** ipa can be found in the [Release tab](https://github.com/arichorn/uYouPlusExtra/releases/latest).
@@ -237,16 +233,16 @@
 
   - My official AltStore repo: https://therealfoxster.github.io/altsource-viewer/index.html?source=https://raw.githubusercontent.com/arichorn/arichorn.github.io/main/apps.json
 
-  - [Open in AltStore (v18.39.1-3.0.1)](https://tinyurl.com/36djdsdh) - It will take a while to install because AltStore needs to download the IPA first.
+  - [Open in AltStore (v18.41.5-3.0.1)](https://tinyurl.com/56rjypzh) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(last update: Oct 2 2023)_
+- Version info: _(last update: Oct 28 2023)_
 
 <details>
   <summary>Expand ℹ️</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.39.1 | ✖︎ |
+| **YouTube** | Google Inc | 18.41.5 | ✖︎ |
 | [uYou](https://github.com/MiRO92/uYou-for-YouTube) | [MiRO92](https://twitter.com/miro92) | 3.0.1 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes) | 1.2 | [✔︎](https://github.com/CokePokes/YoutubeExtensions) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
