@@ -1566,7 +1566,7 @@ extern NSBundle *uYouPlusBundle();
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"uYouPlusExtra Logo")
                 titleDescription:LOC(@"Toggle this to replace the YouTube Logo with the uYouPlusExtra Logo. App restart is required.")
                 accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"ytStartupAnimation_enabled")
+                switchOn:IsEnabled(@"defaultYouTubeLogo_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"defaultYouTubeLogo_enabled"];
                     return YES;

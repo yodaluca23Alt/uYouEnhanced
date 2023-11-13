@@ -974,18 +974,27 @@ static void replaceTab(YTIGuideResponse *response) {
 
 %end
 
-// Hide the (Download Button / Remix Button) under the Video Player - @arichorn
+// Hide the (Remix / Thanks / Download / Clip / Save) Buttons under the Video Player - @arichorn
 %hook _ASDisplayView
 - (void)layoutSubviews {
     %orig;
-    BOOL hideAddToOfflineButton = IsEnabled(@"hideAddToOfflineButton_enabled");
     BOOL hideRemixButton = IsEnabled(@"hideRemixButton_enabled");
+    BOOL hideThanksButton = IsEnabled(@"hideThanksButton_enabled");
+    BOOL hideAddToOfflineButton = IsEnabled(@"hideAddToOfflineButton_enabled");
+    BOOL hideClipButton = IsEnabled(@"hideClipButton_enabled");
+    BOOL hideSaveToPlaylistButton = IsEnabled(@"hideSaveToPlaylistButton_enabled");
 
     for (UIView *subview in self.subviews) {
-        if ([subview.accessibilityIdentifier isEqualToString:@"id.ui.add_to.offline.button"]) {
-            subview.hidden = hideAddToOfflineButton;
-        } else if ([subview.accessibilityIdentifier isEqualToString:@"id.video.remix.button"]) {
+        if ([subview.accessibilityIdentifier isEqualToString:@"id.video.remix.button"]) {
             subview.hidden = hideRemixButton;
+        } else if ([subview.accessibilityLabel isEqualToString:@"Thanks"]) {
+            subview.hidden = hideThanksButton;
+        } else if ([subview.accessibilityIdentifier isEqualToString:@"id.ui.add_to.offline.button"]) {
+            subview.hidden = hideAddToOfflineButton;
+        } else if ([subview.accessibilityLabel isEqualToString:@"Clip"]) {
+            subview.hidden = hideClipButton;
+        } else if ([subview.accessibilityLabel isEqualToString:@"Save to playlist"]) {
+            subview.hidden = hideSaveToPlaylistButton;
         }
     }
 }
