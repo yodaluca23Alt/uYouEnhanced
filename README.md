@@ -28,14 +28,14 @@
 
 # Table of Contents
 
-[![Credits](https://img.shields.io/badge/Credits-blue?style=flat&logo=square&logoColor=e81e8a)](#credits)<br>
-[![Features](https://img.shields.io/badge/Features-blue?style=flat&logo=square&logoColor=e81e8a)](#features)<br>
-[![Known Issues](https://img.shields.io/badge/Known%20Issues-blue?style=flat&logo=square&logoColor=e81e8a)](#known-issues)<br>
-[![Download](https://img.shields.io/badge/Download-blue?style=flat&logo=square&logoColor=e81e8a)](#download)<br>
-[![Installation](https://img.shields.io/badge/Installation-blue?style=flat&logo=square&logoColor=e81e8a)](#installation)<br>
-[![Support the Developers](https://img.shields.io/badge/Support%20the%20Developers-blue?style=flat&logo=square&logoColor=e81e8a)](#support-the-developers)<br>
-[![FAQ](https://img.shields.io/badge/FAQ-blue?style=flat&logo=square&logoColor=e81e8a)](#faq)<br>
-[![Building (Optional)](https://img.shields.io/badge/Building%20%28Optional%29-blue?style=flat&logo=square&logoColor=e81e8a)](#building-optional)
+[![Credits](https://img.shields.io/badge/Credits-blue?style=flat)](#credits)<br>
+[![Features](https://img.shields.io/badge/Features-blue?style=flat)](#features)<br>
+[![Known Issues](https://img.shields.io/badge/Known%20Issues-blue?style=flat)](#known-issues)<br>
+[![Download](https://img.shields.io/badge/Download-blue?style=flat)](#download)<br>
+[![Installation](https://img.shields.io/badge/Installation-blue?style=flat)](#installation)<br>
+[![Support the Developers](https://img.shields.io/badge/Support%20the%20Developers-blue?style=flat)](#support-the-developers)<br>
+[![FAQ](https://img.shields.io/badge/FAQ-blue?style=flat)](#faq)<br>
+[![Building (Optional)](https://img.shields.io/badge/Building%20%28Optional%29-blue?style=flat)](#building-optional)
 
 # Credits
 - Special thanks to all the developers who have worked on uYouPlus/uYouPlusExtra! 
@@ -222,9 +222,6 @@
 
 - Issues related to **uYouPlus** can be found [here](https://github.com/qnblackcat/uYouPlus/issues/), or issues related to **uYouPlusExtra** can be found [here](https://github.com/arichorn/uYouPlusExtra/issues/).
 
-**Return YouTube Dislikes**: this tweak can't display dislikes correctly under the Shorts Dislike Button.
-    - workaround: go to `Settings > uYouPlus > Miscellaneous > Enable App Version Spoofer` and once it's enabled. Go to `Version Spoofer Picker` and select `v18.20.3` and this should temporary resolve the issue for the Return YouTube Dislikes tweak.
-
 # Download
 
 - **uYouPlusExtra** (or you can just call it uYou+) requires iOS or iPadOS 14.0 or later. The latest version of **uYouPlusExtra** ipa can be found in the [Release tab](https://github.com/arichorn/uYouPlusExtra/releases/latest).
@@ -233,16 +230,16 @@
 
   - My official AltStore repo: https://therealfoxster.github.io/altsource-viewer/index.html?source=https://raw.githubusercontent.com/arichorn/arichorn.github.io/main/apps.json
 
-  - [Open in AltStore (v18.41.5-3.0.1)](https://tinyurl.com/56rjypzh) - It will take a while to install because AltStore needs to download the IPA first.
+  - [Open in AltStore (v18.44.3-3.0.1)](https://tinyurl.com/y7ufeamx) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(last update: Oct 28 2023)_
+- Version info: _(last update: Nov 7 2023)_
 
 <details>
   <summary>Expand ℹ️</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.41.5 | ✖︎ |
+| **YouTube** | Google Inc | 18.44.3 | ✖︎ |
 | [uYou](https://github.com/MiRO92/uYou-for-YouTube) | [MiRO92](https://twitter.com/miro92) | 3.0.1 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes) | 1.2 | [✔︎](https://github.com/CokePokes/YoutubeExtensions) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -253,7 +250,7 @@
 | **YTSpeed** | [Lyvendia](https://github.com/Lyvendia) | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTCastConfirm** | [JamieBerghmans](https://github.com/JamieBerghmans) | 1.0.0 | [✔︎](https://github.com/JamieBerghmans/YTCastConfirm) |
 | **Alderis Color Picker** | [HASHBANG Productions](https://github.com/hbang) | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
-| **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
+| **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.0-1 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.20 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.5.0-2 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
@@ -261,10 +258,10 @@
 | **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YouRememberCaption** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://poomsmart.github.io/repo/depictions/youremembercaption.html) |
-| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.11.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.11.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1-2 | [✔︎](https://github.com/PoomSmart/YouMute) |
 | **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.4 | [✔︎](https://github.com/PoomSmart/YouQuality) |
-| **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.1 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
+| **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
 | **LowContrastMode** | [arichorn](https://github.com/arichorn) | 1.5.0 | [✔︎](https://github.com/arichorn/YTLowContrastMode) |
 
 </details>
@@ -275,7 +272,7 @@
 |-----------|-----------------------|--------------------------|--------------------------|
 | MiRO92 | uYou 2.1/2.3~1 | v16.42.3 - 18.01.6 | iOS 13 - iOS 15 |
 | MiRO92 | uYou 3.0 | v18.06.6 - 18.18.2 | iOS 14 - iOS 15 |
-| MiRO92 | uYou 3.0.1 | v18.08.1 - latest | iOS 14 - iOS 17 |
+| MiRO92 | uYou 3.0.1 | v18.08.1 - v18.41.5 | iOS 14 - iOS 17 |
 
 # Installation
 See [Installation - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Installation).

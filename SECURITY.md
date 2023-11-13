@@ -1,9 +1,11 @@
-# Security Policy for uYouPlus Developers
+# Security Policy for This Repostory
 If I verify a reported security vulnerability, my policy is:
 
-- the Contributors are allowed to patch only the **main** branch unless an additional branch is involved. implementation of anything like custom features/options, updated features/options, Grammer Errors.
+- Contributors are allowed to make patches only to the main branch, unless an additional branch is involved. This policy applies to the implementation of custom features/options, updated features/options, and grammar errors.
 
-- uYouPlusExtra doesn't support Localization pull requests. this may be a sudden change but its pretty hard to maintain the the localization whenever the branch resets. so therefore its hard to keep any localization changed on uYouPlusExtra.
+- uYouPlusExtra does not support Localization pull requests. While it may seem like a sudden change, maintaining localization becomes challenging when the branch needs to be reset due to the changes from qnblackcat/uYouPlus repostory. Therefore, it is difficult to preserve any localization changes that were added on uYouPlusExtra.
+
+- The Users **qnblackcat** and **PoomSmart** are prohibited from utilizing any new code introduced in the uYouPlusExtra fork, except for submodules/your-tweaks. Violation of this rule will result in appropriate consequences, including but not limited to account suspension, access revocation, or other disciplinary actions as deemed necessary by the project administrators. Furthermore, it is strictly forbidden to publicly share or showcase the content of this policy on any social media platforms. Any breach of this restriction may result in similar disciplinary actions
 
 ## Supported Versions
 
@@ -15,4 +17,4 @@ currently being supported with security/feature updates.
 | [latest](https://github.com/arichorn/uYouPlusExtra/releases/latest) | ✅ | ✅ | The latest version is stable! |
 | [18.08.1-3.0.1 LTS](https://github.com/arichorn/uYouPlusExtra/releases/tag/v18.08.1-3.0.1-F3) | N/A | ✅ | This new LTS Release is new and is important to some uYou 3.0.1 Users. |
 | [17.38.10-2.1 LTS](https://github.com/arichorn/uYouPlusExtra/releases/latest) | N/A | ✅ | This new LTS Release will soon to replace **16.42.3-2.1** next year. |
-| [16.42.3-2.1 LTS](https://github.com/arichorn/uYouPlusExtra/releases/tag/v16.42.3-2.1-F20) | Depends | ✅ until 2024+ | Unstable if you are using iOS 16 or later, Stage Manager will not be sized correctly with any videos that are playing in the video player, The App Pivot Bar does not hide correctly when playing videos in iOS 16+ due to Old APIs or something else in the App but this version can still get new features from Google like these new ones that were recently added in as an example --> (Shorts, Continue Watching Section, Watch It Again Section, Handles & etc.) so overrall this YouTube Version is still supported by Google. |
+| [16.42.3-2.1 LTS](https://github.com/arichorn/uYouPlusExtra/releases/tag/v16.42.3-2.1-F20) | Depends | ✅ until 2024+ | If you're using iOS 16 or later, please note that Stage Manager may not be sized correctly when videos are playing in the video player. Additionally, the App Pivot Bar may not hide correctly when playing videos. also iOS 16 or newer has compatibility issues of other factors within the app. However, this version of YouTube can still receive new some features from Google, such as Shorts, the Continue Watching Section, the Watch It Again Section, Handles, and more. Overall, this YouTube version remains functional and up-to-date or probably even supported by Google. |

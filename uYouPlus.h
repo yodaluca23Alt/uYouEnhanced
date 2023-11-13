@@ -14,8 +14,10 @@
 #import "Tweaks/YouTubeHeader/YTIGuideResponse.h"
 #import "Tweaks/YouTubeHeader/YTIGuideResponseSupportedRenderers.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarSupportedRenderers.h"
+#import "Tweaks/YouTubeHeader/YTIPivotBarItemRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
+#import "Tweaks/YouTubeHeader/YTIButtonRenderer.h"
 #import "Tweaks/YouTubeHeader/YTISectionListRenderer.h"
 #import "Tweaks/YouTubeHeader/YTColorPalette.h"
 #import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
@@ -38,11 +40,24 @@
 #define YT_NAME @"YouTube"
 #define DEFAULT_RATE 2.0f // YTSpeed
 
+@interface YTSingleVideoController ()
+- (float)playbackRate;
+- (void)setPlaybackRate:(float)arg1;
+@end
+
+@interface YTPlayerViewController ()
+- (YTSingleVideoController *)activeVideo;
+@end
+
 // IAmYouTube
 @interface SSOConfiguration : NSObject
 @end
 
 // uYouPlus
+@interface YTLogoHeaderViewController : UIView
+@property(readonly, nonatomic) long long pageStyle;
+@end
+
 @interface YTChipCloudCell : UIView
 @end
 
@@ -94,7 +109,6 @@
 
 @interface YTISlimMetadataButtonSupportedRenderers : NSObject
 - (id)slimButton_buttonRenderer;
-- (BOOL)shouldHideButton;
 - (id)slimMetadataButtonRenderer;
 @end
 
@@ -198,7 +212,6 @@
 @end
 
 @interface _ASDisplayView : UIView
-- (UIView *)findCellContainingButton:(UIButton *)button;
 @end
 
 @interface YTAutonavEndscreenView : UIView
