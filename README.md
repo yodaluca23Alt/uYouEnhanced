@@ -15,15 +15,15 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/arichorn/uYouPlusExtra/releases/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/uYouPlusExtra?logo=youtube&color=%23e81e8a&label=Latest%20Release" alt="Latest Release Badge"></a>
-    <a href="https://github.com/arichorn/uYouPlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/qnblackcat/uYouPlus/total?color=%23e81e8a&label=Downloads&logo=cloudsmith&logoColor=white" alt="Download Badge"></a>
-    <a href="https://github.com/arichorn/uYouPlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/uYouPlusExtra?logo=history&logoColor=white&color=%23e81e8a&label=Last%20Commit" alt="Last Commit Badge"></a>
-    <a href="https://github.com/arichorn/uYouPlusExtra/issues"><img src="https://custom-icon-badges.demolab.com/github/issues-raw/arichorn/uYouPlusExtra?logo=issue-opened&logoColor=white&color=%23e81e8a&label=Issues" alt="Issues Badge"></a>
+    <a href="https://github.com/yodaluca23Alt/uYouPlusExtra/releases/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/yodaluca23Alt/uYouPlusExtra?logo=youtube&color=%23e81e8a&label=Latest%20Release" alt="Latest Release Badge"></a>
+    <a href="https://github.com/yodaluca23Alt/uYouPlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/qnblackcat/uYouPlus/total?color=%23e81e8a&label=Downloads&logo=cloudsmith&logoColor=white" alt="Download Badge"></a>
+    <a href="https://github.com/yodaluca23Alt/uYouPlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/yodaluca23Alt/uYouPlusExtra?logo=history&logoColor=white&color=%23e81e8a&label=Last%20Commit" alt="Last Commit Badge"></a>
+    <a href="https://github.com/yodaluca23Alt/uYouPlusExtra/issues"><img src="https://custom-icon-badges.demolab.com/github/issues-raw/yodaluca23Alt/uYouPlusExtra?logo=issue-opened&logoColor=white&color=%23e81e8a&label=Issues" alt="Issues Badge"></a>
 </p>
 
 <p align="center">
-    <a href="https://github.com/arichorn/uYouPlusExtra/stargazers"><img src="https://custom-icon-badges.demolab.com/github/stars/arichorn/uYouPlusExtra?logo=star&logoColor=white&color=%23e81e8a&label=Stars" alt="Stars Badge"></img></a>
-<a href="https://github.com/arichorn/uYouPlusExtra/network/members"><img src="https://custom-icon-badges.demolab.com/github/forks/arichorn/uYouPlusExtra?logo=github&logoColor=white&color=%23e81e8a&label=Forks"></a>
+    <a href="https://github.com/yodaluca23Alt/uYouPlusExtra/stargazers"><img src="https://custom-icon-badges.demolab.com/github/stars/yodaluca23Alt/uYouPlusExtra?logo=star&logoColor=white&color=%23e81e8a&label=Stars" alt="Stars Badge"></img></a>
+<a href="https://github.com/yodaluca23Alt/uYouPlusExtra/network/members"><img src="https://custom-icon-badges.demolab.com/github/forks/yodaluca23Alt/uYouPlusExtra?logo=github&logoColor=white&color=%23e81e8a&label=Forks"></a>
 </p>
 
 # Table of Contents
@@ -220,11 +220,11 @@
 
 - **uYou**: All the known issues of uYou are listed [here](https://github.com/MiRO92/uYou-for-YouTube/issues). Make sure you take a look at it before reporting any bugs! Also, keep in mind that uYou+ is a modified version of uYou. DO NOT bother MiRO92 with problems unrelated to uYou!
 
-- Issues related to **uYouPlus** can be found [here](https://github.com/qnblackcat/uYouPlus/issues/), or issues related to **uYouPlusExtra** can be found [here](https://github.com/arichorn/uYouPlusExtra/issues/).
+- Issues related to **uYouPlus** can be found [here](https://github.com/qnblackcat/uYouPlus/issues/), or issues related to **uYouPlusExtra** can be found [here](https://github.com/yodaluca23Alt/uYouPlusExtra/issues/).
 
 # Download
 
-- **uYouPlusExtra** (or you can just call it uYou+) requires iOS or iPadOS 14.0 or later. The latest version of **uYouPlusExtra** ipa can be found in the [Release tab](https://github.com/arichorn/uYouPlusExtra/releases/latest).
+- **uYouPlusExtra** (or you can just call it uYou+) requires iOS or iPadOS 14.0 or later. The latest version of **uYouPlusExtra** ipa can be found in the [Release tab](https://github.com/yodaluca23Alt/uYouPlusExtra/releases/latest).
 
 - For AltStore user: 
 
@@ -262,7 +262,7 @@
 | **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1-2 | [✔︎](https://github.com/PoomSmart/YouMute) |
 | **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.4 | [✔︎](https://github.com/PoomSmart/YouQuality) |
 | **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
-| **LowContrastMode** | [arichorn](https://github.com/arichorn) | 1.5.0 | [✔︎](https://github.com/arichorn/YTLowContrastMode) |
+| **LowContrastMode** | [yodaluca23Alt](https://github.com/yodaluca23Alt) | 1.5.0 | [✔︎](https://github.com/yodaluca23Alt/YTLowContrastMode) |
 
 </details>
 
