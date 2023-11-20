@@ -54,7 +54,7 @@
 @end
 
 // uYouPlus
-@interface YTLogoHeaderViewController : UIView
+@interface YTHeaderLogoController : UIView
 @property(readonly, nonatomic) long long pageStyle;
 @end
 

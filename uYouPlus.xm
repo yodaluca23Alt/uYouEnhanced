@@ -144,7 +144,7 @@ static void repositionCreateTab(YTIGuideResponse *response) {
 
 // uYouPlusExtra Logo - #183
 %group gDefaultYouTubeLogo
-%hook YTLogoHeaderViewController
+%hook YTHeaderLogoController
 - (void)setLogoView:(id)logoView {
     if ([logoView isKindOfClass:[UIImageView class]]) {
         UIImageView *imageView = (UIImageView *)logoView;
@@ -165,13 +165,49 @@ static void repositionCreateTab(YTIGuideResponse *response) {
     %orig;
 }
 %end
+%hook UIImage
++ (UIImage *)imageNamed:(NSString *)name {
+    NSString *customDarkLogo = @"/Library/Application Support/uYouPlus.bundle/youtube_logo_dark.png";
+    NSString *customLightLogo = @"/Library/Application Support/uYouPlus.bundle/youtube_logo.png";
+    
+    if ([name isEqualToString:@"youtube_logo_dark"]) {
+        return [UIImage imageWithContentsOfFile:customDarkLogo];
+    } else if ([name isEqualToString:@"youtube_logo"]) {
+        return [UIImage imageWithContentsOfFile:customLightLogo];
+    }
+    return %orig;
+}
+%end
+%hook UIImageView
+- (void)setImage:(UIImage *)image {
+    NSString *customDarkLogo = @"/Library/Application Support/uYouPlus.bundle/youtube_logo_dark.png";
+    NSString *customLightLogo = @"/Library/Application Support/uYouPlus.bundle/youtube_logo.png";
+    
+    if ([NSStringFromClass([image class]) isEqualToString:@"UIImage"] &&
+        [NSStringFromCGSize(image.size) isEqualToString:@"{122, 48}"] &&
+        [NSStringFromCGRect(self.bounds) isEqualToString:@"{{0, 0}, {122, 48}}"]) {
+        
+        if ([image.accessibilityIdentifier isEqualToString:@"youtube_logo_dark"]) {
+            image = [UIImage imageWithContentsOfFile:customDarkLogo];
+        } else if ([image.accessibilityIdentifier isEqualToString:@"youtube_logo"]) {
+            image = [UIImage imageWithContentsOfFile:customLightLogo];
+        }
+    }
+    %orig(image);
+}
+%end
 %end
 
 %group gPremiumYouTubeLogo
-%hook YTLogoHeaderViewController
+%hook YTHeaderLogoController
 - (void)setPremiumLogo:(BOOL)isPremiumLogo {
     isPremiumLogo = YES;
     %orig;
+}
+- (BOOL)isPremiumLogo {
+    return YES;
+}
+- (void)setTopbarLogoRenderer:(id)renderer {
 }
 %end
 %end
@@ -472,14 +508,61 @@ static void repositionCreateTab(YTIGuideResponse *response) {
 - (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
-// YTNoTracking - https://github.com/arichorn/YTNoTracking/
+// YTNoTracking - @arichorn - https://github.com/arichorn/YTNoTracking/
 %hook YTICompactLinkRenderer
-- (BOOL)hasTrackingParams { return NO; }
++ (BOOL)hasTrackingParams {
+    return NO;
+}
 %end
 
 %hook YTIReelPlayerOverlayRenderer
-- (BOOL)hasTrackingParams { return NO; }
++ (BOOL)hasTrackingParams {
+    return NO;
+}
 %end
+
+%hook YTIShareTargetServiceUpdateRenderer
++ (BOOL)hasTrackingParams {
+    return NO;
+}
+%new
+- (id)removeParameterFromURL:(id)arg1 {
+    NSURLComponents *components = [NSURLComponents componentsWithURL:arg1 resolvingAgainstBaseURL:NO];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (name == %@)", @"si"];
+    NSArray<NSURLQueryItem *> *filteredQueryItems = [components.queryItems filteredArrayUsingPredicate:predicate];
+    components.queryItems = filteredQueryItems;
+    
+    NSURL *modifiedURL = components.URL;
+    if (!modifiedURL) {
+        modifiedURL = arg1;
+    }
+    return modifiedURL;
+}
+%end
+
+int main(int argc, char * argv[]) {
+    @autoreleasepool {
+        NSURL *originalURL = [NSURL URLWithString:@"https://www.youtube.com/watch?v=your_video_id&si=abcd1234"];
+        NSURLComponents *components = [NSURLComponents componentsWithURL:originalURL resolvingAgainstBaseURL:NO];
+        NSMutableArray<NSURLQueryItem *> *queryItems = [NSMutableArray arrayWithArray:components.queryItems];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (name == 'si' OR name BEGINSWITH 'si=')"];
+        [queryItems filterUsingPredicate:predicate];
+        components.queryItems = queryItems;
+        NSURL *cleanedURL = components.URL;
+
+        if (cleanedURL) {
+            [[UIApplication sharedApplication] openURL:cleanedURL options:@{} completionHandler:^(BOOL success) {
+                if (success) {
+                    NSLog(@"URL opened successfully!");
+                } else {
+                    NSLog(@"Failed to open URL");
+                }
+            }];
+        }
+    }
+    return 0;
+}
 
 // YTNoPaidPromo: https://github.com/PoomSmart/YTNoPaidPromo
 %hook YTMainAppVideoPlayerOverlayViewController
@@ -569,13 +652,15 @@ static void repositionCreateTab(YTIGuideResponse *response) {
 - (BOOL)enableCinematicContainer { return NO; }
 - (BOOL)enableCinematicContainerOnClient { return NO; }
 - (BOOL)enableCinematicContainerOnTablet { return NO; }
+- (BOOL)enableTurnOffCinematicForFrameWithBlackBars { return YES; }
+- (BOOL)enableTurnOffCinematicForVideoWithBlackBars { return YES; }
 - (BOOL)iosCinematicContainerClientImprovement { return NO; }
-- (BOOL)iosEnableFullScreenAmbientMode { return NO; }
 - (BOOL)iosEnableGhostCardInlineTitleCinematicContainerFix { return NO; }
 - (BOOL)iosUseFineScrubberMosaicStoreForCinematic { return NO; }
 - (BOOL)mainAppCoreClientEnableClientCinematicPlaylists { return NO; }
 - (BOOL)mainAppCoreClientEnableClientCinematicPlaylistsPostMvp { return NO; }
 - (BOOL)mainAppCoreClientEnableClientCinematicTablets { return NO; }
+- (BOOL)iosEnableFullScreenAmbientMode { return NO; }
 // 16.42.3 Styled YouTube Channel Page Interface - YTNoModernUI
 - (BOOL)channelsClientConfigIosChannelNavRestructuring { return NO; }
 - (BOOL)channelsClientConfigIosMultiPartChannelHeader { return NO; }
@@ -594,6 +679,24 @@ static void repositionCreateTab(YTIGuideResponse *response) {
 - (BOOL)liveChatModernizeClassicElementizeTextMessage { return NO; }
 - (BOOL)iosShouldRepositionChannelBar { return NO; }
 - (BOOL)enableElementRendererOnChannelCreation { return NO; }
+%end
+%end
+
+%group gDisableAmbientMode
+%hook YTColdConfig
+- (BOOL)disableCinematicForLowPowerMode { return NO; }
+- (BOOL)enableCinematicContainer { return NO; }
+- (BOOL)enableCinematicContainerOnClient { return NO; }
+- (BOOL)enableCinematicContainerOnTablet { return NO; }
+- (BOOL)enableTurnOffCinematicForFrameWithBlackBars { return YES; }
+- (BOOL)enableTurnOffCinematicForVideoWithBlackBars { return YES; }
+- (BOOL)iosCinematicContainerClientImprovement { return NO; }
+- (BOOL)iosEnableGhostCardInlineTitleCinematicContainerFix { return NO; }
+- (BOOL)iosUseFineScrubberMosaicStoreForCinematic { return NO; }
+- (BOOL)mainAppCoreClientEnableClientCinematicPlaylists { return NO; }
+- (BOOL)mainAppCoreClientEnableClientCinematicPlaylistsPostMvp { return NO; }
+- (BOOL)mainAppCoreClientEnableClientCinematicTablets { return NO; }
+- (BOOL)iosEnableFullScreenAmbientMode { return NO; }
 %end
 %end
 
@@ -806,6 +909,12 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     return %orig;
 }
+- (void)setFeaturedChannelWatermarkImageView:(id)imageView {
+    if (IsEnabled(@"hideChannelWatermark_enabled")) {
+        return;
+    }
+    %orig(imageView);
+}
 %end
 // Hide Channel Watermark (for Backwards Compatibility)
 %hook YTAnnotationsViewController
@@ -956,10 +1065,9 @@ static void replaceTab(YTIGuideResponse *response) {
                 }
             }
 
-            // Hide Community Posts            
+// Hide Community Posts            
             if (IsEnabled(@"hideCommunityPosts_enabled")) {
-                if ([idToRemove rangeOfString:@"id.ui.backstage.post"].location != NSNotFound ||
-                    [idToRemove rangeOfString:@"id.ui.backstage.original_post"].location != NSNotFound) {
+                if ([idToRemove rangeOfString:@"id.ui.backstage.post"].location != NSNotFound) {
                     [self removeShortsAndFeaturesAdsAtIndexPath:indexPath];
                 }
             }
@@ -1221,7 +1329,7 @@ static void replaceTab(YTIGuideResponse *response) {
 }
 %end
 
-%hook YTFullScreenEngagementOverlayViewController
+%hook YTFullScreenEngagementOverlayController
 - (void)setRelatedVideosVisible:(BOOL)visible {
 }
 - (BOOL)relatedVideosPeekingEnabled {
@@ -1279,12 +1387,18 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
-// Hide Subscriptions Notification Badge - @arichorn
+// Hide Indicators - @Dayanch96 & @arichorn
 %group gHideSubscriptionsNotificationBadge
 %hook YTPivotBarIndicatorView
 - (void)didMoveToWindow {
     [self setHidden:YES];
     %orig();
+}
+- (void)setFillColor:(id)arg1 {
+    %orig([UIColor clearColor]);
+}
+- (void)setBorderColor:(id)arg1 {
+    %orig([UIColor clearColor]);
 }
 %end
 %end
@@ -1384,6 +1498,9 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     if (IsEnabled(@"ytNoModernUI_enabled")) {
         %init(gYTNoModernUI);
+    }
+    if (IsEnabled(@"disableAmbientMode_enabled")) {
+        %init(gDisableAmbientMode);
     }
     if (IsEnabled(@"disableAccountSection_enabled")) {
         %init(gDisableAccountSection);
