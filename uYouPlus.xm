@@ -475,6 +475,16 @@ static NSString *accessGroupID() {
 %end
 %end
 
+// YTNoSuggestedVideo - https://github.com/bhackel/YTNoSuggestedVideo
+%hook YTMainAppVideoPlayerOverlayViewController
+- (bool)shouldShowAutonavEndscreen {
+    if (IS_ENABLED(@"noSuggestedVideo_enabled")) {
+        return false;
+    }
+    return %orig;
+}
+%end
+
 # pragma mark - Hide Notification Button && SponsorBlock Button
 %hook YTRightNavigationButtons
 - (void)layoutSubviews {

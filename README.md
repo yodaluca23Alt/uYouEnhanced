@@ -42,6 +42,8 @@
 
 <table id='credit'>
 <tr>
+
+<MiRO92>
 <td align="center">
 <a href='https://github.com/MiRO92'>
 <img src='https://user-images.githubusercontent.com/78001398/271811861-da79accc-095c-4cb3-b7b4-8d48b1449259.png' width='110px'>
@@ -49,6 +51,8 @@
 <br>
 <a href='https://twitter.com/miro92'>MiRO92</a>
 </td>
+
+<qnblackcat>
 <td align="center">
 <a href='https://github.com/qnblackcat'>
 <img src='https://user-images.githubusercontent.com/78001398/271812521-e52ebf96-7272-4ec0-a149-8e721c053508.png' width='110px'>
@@ -56,6 +60,8 @@
 <br>
 <a href='https://twitter.com/qnblackcat'>qnblackcat</a>
 </td>
+
+<PoomSmart>
 <td align="center">
 <a href='https://github.com/PoomSmart'>
 <img src='https://user-images.githubusercontent.com/78001398/271811615-96093202-4aec-4e50-a750-8c7b83f3862c.png' width='110px'>
@@ -63,6 +69,8 @@
 <br>
 <a href='https://twitter.com/poomsmart'>PoomSmart</a>
 </td>
+
+<level3tjg>
 <td align="center">
 <a href='https://github.com/level3tjg'>
 <img src='https://user-images.githubusercontent.com/78001398/271812596-7854996a-3825-4971-a9ff-1001b4d153cb.png' width='110px'>
@@ -70,6 +78,8 @@
 <br>
 <a href='https://twitter.com/level3tjg'>level3tjg</a>
 </td>
+
+<BandarHL>
 <td align="center">
 <a href='https://github.com/BandarHL'>
 <img src='https://user-images.githubusercontent.com/78001398/271812729-2bb63da0-5239-43a4-aa3e-e1daa67e8dc2.png' width='110px'>
@@ -77,6 +87,8 @@
 <br>
 <a href='https://twitter.com/bandarhl'>BandarHelal</a>
 </td>
+
+<Galactic-Dev>
 <td align="center">
 <a href='https://github.com/Galactic-Dev'>
 <img src='https://user-images.githubusercontent.com/78001398/271812231-5b7d5d9f-6d19-4174-8478-8f07379ee1ca.png' width='110px'>
@@ -87,6 +99,8 @@
 </tr>
   
 <tr>
+
+<julioverne>
 <td align="center">
 <a href='https://github.com/julioverne'>
 <img src='https://user-images.githubusercontent.com/78001398/271812914-bf26d603-2d94-49f4-9702-f5e66af3f44a.png' width='110px'>
@@ -94,6 +108,8 @@
 <br>
 <a href='https://twitter.com/ijulioverne'>julioverne</a>
 </td>
+
+<hbang>
 <td align="center">
 <a href='https://github.com/hbang'>
 <img src='https://user-images.githubusercontent.com/78001398/271813035-2e168ee5-fc47-43a6-9307-0fc20c7fca60.png' width='110px'>
@@ -101,6 +117,8 @@
 <br>
 <a href='https://twitter.com/hashbang'>HASHBANG</a>
 </td>
+
+<Lyvendia>
 <td align="center">
 <a href='https://github.com/Lyvendia'>
 <img src='https://user-images.githubusercontent.com/78001398/271812187-1c0d5b24-caba-4616-b875-4c458d10ca55.png' width='110px'>
@@ -108,6 +126,8 @@
 <br>
 <a href='https://github.com/Lyvendia'>Lyvendia</a>
 </td>
+
+<therealFoxster>
 <td align="center">
 <a href='https://github.com/therealFoxster'>
 <img src='https://user-images.githubusercontent.com/78001398/271812075-923038a7-5ffa-4ea4-9de4-fdf4e5d556c2.png' width='110px'>
@@ -115,6 +135,8 @@
 <br>
 <a href='https://twitter.com/therealFoxster'>Foxster</a>
 </td>
+
+<ichitaso>
 <td align="center">
 <a href='https://github.com/ichitaso'>
 <img src='https://user-images.githubusercontent.com/78001398/271812398-c7e40fa3-4e0b-4be2-aa51-900444d59abd.png' width='110px'>
@@ -122,6 +144,8 @@
 <br>
 <a href='https://twitter.com/ichitaso'>ichitaso</a>
 </td>
+
+<AhmedBafkir>
 <td align="center">
 <a href='https://github.com/AhmedBafkir'>
 <img src='https://user-images.githubusercontent.com/78001398/271813114-dcb005f7-b83b-40e6-a9cb-9b661dd6b33b.png' width='110px'>
@@ -132,6 +156,8 @@
 </tr>
 
 <tr>
+
+<CokePokes>
 <td align="center">
 <a href='https://github.com/CokePokes'>
 <img src='https://user-images.githubusercontent.com/78001398/271813228-d28471b4-cb67-442c-bd63-276f1641a14e.png' width='110px'>
@@ -139,6 +165,8 @@
 <br>
 <a href='https://twitter.com/cokepokes'>CokePokes</a>
 </td>
+
+<ISnackable>
 <td align="center">
 <a href='https://github.com/ISnackable'>
 <img src='https://user-images.githubusercontent.com/78001398/271813311-2027a8de-a08d-4f1b-97a4-167f4bcef497.png' width='110px'>
@@ -146,6 +174,8 @@
 <br>
 <a href='https://isnackable.me/'>Tommy Teo</a>
 </td>
+
+<dayanch96>
 <td align="center">
 <a href='https://github.com/dayanch96'>
 <img src='https://user-images.githubusercontent.com/78001398/271853514-129334b3-498f-4804-aceb-392bf5e373e6.png' width='110px;'>
@@ -153,6 +183,8 @@
 <br>
 <a href='https://github.com/dayanch96'>dayanch96</a>
 </td>
+
+<ssuesskind>
 <td align="center">
 <a href='https://github.com/ssuesskind'>
 <img src='https://user-images.githubusercontent.com/78001398/271853585-77271641-b825-43b1-af57-d9f5b12fe8ff.png' width='110px;'>
@@ -160,6 +192,8 @@
 <br>
 <a href='https://github.com/ssuesskind'>ssuesskind</a>
 </td>
+
+<balackburn>
 <td align="center">
 <a href='https://github.com/balackburn'>
 <img src='https://user-images.githubusercontent.com/78001398/271853318-3005deb3-b484-4b2b-a093-44c2af79b9af.png' width='110px;'>
@@ -167,12 +201,26 @@
 <br>
 <a href='https://github.com/balackburn'>balackburn</a>
 </td>
+
+<theos>
 <td align="center">
 <a href='https://github.com/theos/theos'>
 <img src='https://user-images.githubusercontent.com/78001398/271813393-56a63730-a56d-41ba-b473-4d37761526c9.png' width='110px'>
 </a>
 <br>
 <a href='https://theos.dev'>theos</a>
+</td>
+</tr>
+
+<tr>
+
+<bhackel>
+<td align="center">
+<a href='https://github.com/bhackel'>
+<img src='https://github.com/arichorn/uYouEnhanced/assets/78001398/d1d46f69-d7b9-4e6a-82b6-e5629d26667b' width='110px;'>
+</a>
+<br>
+<a href='https://github.com/bhackel'>bhackel</a>
 </td>
 </tr>
 </table>
@@ -212,7 +260,7 @@
 
 15. **YTVideoOverlay:** YTVideoOverlay adds buttons to overlay the video, providing quick access to features like captions, speed control, and quality settings.
 
-16. **LowContrastMode:** LowContrastMode is a tweak that allows users to darken the text in the YouTube app, making it easier to read. **<-- uYouPlusExtra Exclusive Feature (subject to change)**
+16. **LowContrastMode:** LowContrastMode is a tweak that allows users to darken the text in the YouTube app, making it easier to read. **<-- uYouEnhanced Exclusive Feature (subject to change)**
 
 </details>
 
@@ -230,16 +278,16 @@
 
   - My official AltStore repo: https://therealfoxster.github.io/altsource-viewer/view/?source=https://raw.githubusercontent.com/arichorn/arichorn.github.io/main/apps.json
 
-  - [Open in AltStore (v18.49.3-3.0.1-F2)](http://tinyurl.com/4ef7zc4k) - It will take a while to install because AltStore needs to download the IPA first.
+  - [Open in AltStore (v19.01.1-3.0.1)](http://tinyurl.com/mwu6j462) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(last update: Dec 21 2023)_
+- Version info: _(last update: Jan 11 2024)_
 
 <details>
   <summary>Expand ℹ️</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.49.3 | ✖︎ |
+| **YouTube** | Google Inc | 19.01.1 | ✖︎ |
 | [uYou](https://github.com/MiRO92/uYou-for-YouTube) | [MiRO92](https://twitter.com/miro92) | 3.0.1 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes) | 1.2 | [✔︎](https://github.com/CokePokes/YoutubeExtensions) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2.1 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -251,19 +299,19 @@
 | **YTCastConfirm** | [JamieBerghmans](https://github.com/JamieBerghmans) | 1.0.0 | [✔︎](https://github.com/JamieBerghmans/YTCastConfirm) |
 | **Alderis Color Picker** | [HASHBANG Productions](https://github.com/hbang) | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
 | **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.0-1 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.22 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.8.1 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
-| **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.5.0-2 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
+| **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.5.0-3 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YouRememberCaption** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://poomsmart.github.io/repo/depictions/youremembercaption.html) |
 | **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.11.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
-| **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1-2 | [✔︎](https://github.com/PoomSmart/YouMute) |
-| **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.4-1 | [✔︎](https://github.com/PoomSmart/YouQuality) |
-| **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
+| **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1-3 | [✔︎](https://github.com/PoomSmart/YouMute) |
+| **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.4-2 | [✔︎](https://github.com/PoomSmart/YouQuality) |
+| **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.1-2 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
 | **YTHoldForSpeed** | [joshuaseltzer](https://github.com/joshuaseltzer) | 1.0.8 | [✔︎](https://github.com/joshuaseltzer/YTHoldForSpeed) |
-| **LowContrastMode** | [arichorn](https://github.com/arichorn) | 1.5.1 | [✔︎](https://github.com/arichorn/YTLowContrastMode) |
+| **LowContrastMode** | [arichorn](https://github.com/arichorn) | 1.5.2 | [✔︎](https://github.com/arichorn/YTLowContrastMode) |
 
 </details>
 

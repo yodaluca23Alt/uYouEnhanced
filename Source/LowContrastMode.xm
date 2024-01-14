@@ -577,6 +577,13 @@ UIColor *lcmHexColor;
         %init(gLowContrastMode);
     }
     if (customContrastMode()) {
+    NSData *lcmColorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"kYTLcmColourOptionVFive"];
+    NSKeyedUnarchiver *lcmUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:lcmColorData error:nil];
+    [lcmUnarchiver setRequiresSecureCoding:NO];
+    NSString *lcmHexString = [lcmUnarchiver decodeObjectForKey:NSKeyedArchiveRootObjectKey];
+    if (lcmHexString != nil) {
+        lcmHexColor = [lcmUnarchiver decodeObjectForKey:NSKeyedArchiveRootObjectKey];
         %init(gCustomContrastMode);
+        }
     }
 }

@@ -30,6 +30,24 @@ static const NSInteger uYouPlusSection = 500;
 
 extern NSBundle *uYouPlusBundle();
 
+// Settings Search Bar
+%hook YTSettingsViewController
+- (void)loadWithModel:(id)model fromView:(UIView *)view {
+    %orig;
+    if ([[self valueForKey:@"_detailsCategoryID"] integerValue] == uYouPlusSection)
+        MSHookIvar<BOOL>(self, "_shouldShowSearchBar") = YES;
+}
+- (void)setSectionControllers {
+    %orig;
+    if (MSHookIvar<BOOL>(self, "_shouldShowSearchBar")) {
+        YTSettingsSectionController *settingsSectionController = [self settingsSectionControllers][[self valueForKey:@"_detailsCategoryID"]];
+        YTSearchableSettingsViewController *searchableVC = [self valueForKey:@"_searchableSettingsViewController"];
+        if (settingsSectionController)
+            [searchableVC storeCollectionViewSections:@[settingsSectionController]];
+    }
+}
+%end
+
 // Settings
 %hook YTAppSettingsPresentationData
 + (NSArray *)settingsCategoryOrder {
@@ -199,6 +217,7 @@ extern NSBundle *uYouPlusBundle();
     SWITCH_ITEM2(LOC(@"RED_PROGRESS_BAR"), LOC(@"RED_PROGRESS_BAR_DESC"), @"redProgressBar_enabled");
     SWITCH_ITEM(LOC(@"HIDE_HOVER_CARD"), LOC(@"HIDE_HOVER_CARD_DESC"), @"hideHoverCards_enabled");
     SWITCH_ITEM2(LOC(@"HIDE_RIGHT_PANEL"), LOC(@"HIDE_RIGHT_PANEL_DESC"), @"hideRightPanel_enabled");
+    SWITCH_ITEM2(LOC(@"Hide Suggested Video"), LOC(@"Remove the suggested video popup when finishing a video. Note that this will prevent autoplay from working."), @"noSuggestedVideo_enabled");
     SWITCH_ITEM2(LOC(@"Hide Heatwaves"), LOC(@"Should hide the Heatwaves in the video player. App restart is required."), @"hideHeatwaves_enabled");
     SWITCH_ITEM2(LOC(@"Hide Dark Overlay Background"), LOC(@"Hide video player's dark overlay background. App restart is required."), @"hideOverlayDarkBackground_enabled");
     SWITCH_ITEM2(LOC(@"Disable Ambient Mode in Fullscreen"), LOC(@"When Enabled, this will Disable the functionality of Ambient Mode from being used in the Video Player when in Fullscreen. App restart is required."), @"disableAmbientMode_enabled");
@@ -253,7 +272,7 @@ extern NSBundle *uYouPlusBundle();
         detailTextBlock:^NSString *() {
             switch (contrastMode()) {
                 case 1:
-                    return LOC(@"Hex Color"); // Hex Color is in WIP for v19.xx.x-3.0.1 release
+                    return LOC(@"Custom Color");
                 case 0:
                 default:
                     return LOC(@"Default");
@@ -266,7 +285,7 @@ extern NSBundle *uYouPlusBundle();
                     [settingsViewController reloadData];
                     return YES;
                 }],
-                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"Hex Color") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"Custom Color") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
                     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"lcm"];
                     [settingsViewController reloadData];
                     return YES;

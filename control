@@ -1,7 +1,7 @@
-Package: com.arichorn.uyouplusextra
-Name: uYouPlusExtra
+Package: com.arichorn.uyouenhanced
+Name: uYouEnhanced
 Architecture: iphoneos-arm
-Description: Modified version of uYouPlus
+Description: An Expanded version of uYouPlus
 Maintainer: arichorn
 Author: qnblackcat
 Section: Tweaks

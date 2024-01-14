@@ -1,33 +1,33 @@
 // About
-"ABOUT" = "About";
+"ABOUT" = "アプリについて";
 
-"VERSION" = "Version";
-"VERSION_CHECK" = "Tap to check for updates!";
+"VERSION" = "バージョン";
+"VERSION_CHECK" = "タップしてアップデートを確認!";
 
-"REPORT_AN_ISSUE" = "Report an issue";
-"ADD_TITLE" = "Add your title here...";
+"REPORT_AN_ISSUE" = "不具合を報告";
+"ADD_TITLE" = "タイトルをここに追加...";
 
-"QUIT_YOUTUBE" = "Quit YouTube";
+"QUIT_YOUTUBE" = "YouTubeを終了";
 
-"RESTART_YOUTUBE" = "Restart YouTube to apply changes";
+"RESTART_YOUTUBE" = "変更を適用するためにYouTubeを再起動";
 
 // App appearance
-"APP_THEME" = "App appearance";
-"THEME_OPTIONS" = "Theme options";
+"APP_THEME" = "アプリのテーマ";
+"THEME_OPTIONS" = "テーマのオプション";
 
-"DARK_THEME" = "Dark theme";
+"DARK_THEME" = "ダークテーマ";
 
-"DEFAULT_THEME" = "Default";
+"DEFAULT_THEME" = "デフォルト";
 "DEFAULT_THEME_DESC" = "";
 
-"OLD_DARK_THEME" = "Lighter grey";
-"OLD_DARK_THEME_DESC" = "YouTube's old dark theme";
+"OLD_DARK_THEME" = "明るいグレー";
+"OLD_DARK_THEME_DESC" = "YouTubeの古いダークテーマ";
 
-"OLED_DARK_THEME" = "OLED (experimental)";
+"OLED_DARK_THEME" = "OLED (実験的)";
 "OLED_DARK_THEME_2" = "OLED";
-"OLED_DARK_THEME_DESC" = "Pure-black dark theme";
+"OLED_DARK_THEME_DESC" = "純粋な黒のダークテーマ";
 
-"OLED_KEYBOARD" = "OLED keyboard (experimental)";
+"OLED_KEYBOARD" = "OLEDキーボード (実験的)";
 "OLED_KEYBOARD_DESC" = "";
 
 // Video controls overlay options
