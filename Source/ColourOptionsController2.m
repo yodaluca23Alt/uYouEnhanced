@@ -70,7 +70,7 @@
 }
 
 - (void)reset {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kCustomThemeColor"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kCustomUIColor"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

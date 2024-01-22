@@ -338,63 +338,66 @@ UIColor *lcmHexColor;
 %end
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)textSecondary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)overlayTextPrimary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)overlayTextSecondary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)iconActive {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)iconActiveOther {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)brandIconActive {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)staticBrandWhite {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)overlayIconActiveOther {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+    return self.pageStyle == 1 ? lcmHexColor : %orig;
 }
 - (UIColor *)overlayIconInactive {
-    return self.pageStyle == 1 ? [[UIColor whiteColor] colorWithAlphaComponent:0.7] : %orig;
+    return self.pageStyle == 1 ? [lcmHexColor colorWithAlphaComponent:0.7] : %orig;
 }
 - (UIColor *)overlayIconDisabled {
-    return self.pageStyle == 1 ? [[UIColor whiteColor] colorWithAlphaComponent:0.3] : %orig;
+    return self.pageStyle == 1 ? [lcmHexColor colorWithAlphaComponent:0.3] : %orig;
 }
 - (UIColor *)overlayFilledButtonActive {
-    return self.pageStyle == 1 ? [[UIColor whiteColor] colorWithAlphaComponent:0.2] : %orig;
+    return self.pageStyle == 1 ? [lcmHexColor colorWithAlphaComponent:0.2] : %orig;
 }
 %end
 %hook YTColor
 + (BOOL)darkerPaletteTextColorEnabled {
     return NO;
 }
++ (UIColor *)white1 {
+    return lcmHexColor;
+}
 + (UIColor *)white2 {
-    return [UIColor whiteColor];
+    return lcmHexColor;
 }
 + (UIColor *)white3 {
-    return [UIColor whiteColor];
+    return lcmHexColor;
 }
 + (UIColor *)white4 {
-    return [UIColor whiteColor];
+    return lcmHexColor;
 }
 + (UIColor *)white5 {
-    return [UIColor whiteColor];
+    return lcmHexColor;
 }
 + (UIColor *)grey1 {
-    return [UIColor whiteColor];
+    return lcmHexColor;
 }
 + (UIColor *)grey2 {
-    return [UIColor whiteColor];
+    return lcmHexColor;
 }
 %end
 %hook QTMColorGroup
@@ -577,7 +580,7 @@ UIColor *lcmHexColor;
         %init(gLowContrastMode);
     }
     if (customContrastMode()) {
-    NSData *lcmColorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"kYTLcmColourOptionVFive"];
+    NSData *lcmColorData = [[NSUserDefaults standardUserDefaults] objectForKey:@"kCustomUIColor"];
     NSKeyedUnarchiver *lcmUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:lcmColorData error:nil];
     [lcmUnarchiver setRequiresSecureCoding:NO];
     NSString *lcmHexString = [lcmUnarchiver decodeObjectForKey:NSKeyedArchiveRootObjectKey];

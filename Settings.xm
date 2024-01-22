@@ -5,12 +5,26 @@
 #import "Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
 #import "Tweaks/YouTubeHeader/YTUIUtils.h"
 #import "Tweaks/YouTubeHeader/YTSettingsPickerViewController.h"
+#import "Source/ColourOptionsController.h"
+#import "Source/ColourOptionsController2.h"
 #import "uYouPlus.h"
 
 #define VERSION_STRING [[NSString stringWithFormat:@"%@", @(OS_STRINGIFY(TWEAK_VERSION))] stringByReplacingOccurrencesOfString:@"\"" withString:@""]
 #define SHOW_RELAUNCH_YT_SNACKBAR [[%c(GOOHUDManagerInternal) sharedInstance] showMessageMainThread:[%c(YTHUDMessage) messageWithText:LOC(@"RESTART_YOUTUBE")]]
 
 #define SECTION_HEADER(s) [sectionItems addObject:[%c(YTSettingsSectionItem) itemWithTitle:@"\t" titleDescription:[s uppercaseString] accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger sectionItemIndex) { return NO; }]]
+
+/* broken button implementation. I tried.
+#define COLOR_BUTTON_ITEM(t, d, ColourOptionsController) [sectionItems addObject:[YTSettingsSectionItemClass buttonItemWithTitle:t titleDescription:d accessibilityIdentifier:nil buttonBlock:^(YTSettingsCell *cell) {\
+    UINavigationController *colourOptionsControllerView = [[UINavigationController alloc] initWithRootViewController:[[ColourOptionsController alloc] init]]; \
+    [colourOptionsControllerView setModalPresentationStyle:UIModalPresentationFullScreen]; \
+    [self._viewControllerForAncestor presentViewController:colourOptionsControllerView animated:YES completion:nil];} settingItemId:0]]
+
+#define COLOR_BUTTON_ITEM2(t, d, ColourOptionsController2) [sectionItems addObject:[YTSettingsSectionItemClass buttonItemWithTitle:t titleDescription:d accessibilityIdentifier:nil buttonBlock:^(YTSettingsCell *cell) {\
+    UINavigationController *colourOptionsController2View = [[UINavigationController alloc] initWithRootViewController:[[ColourOptionsController2 alloc] init]]; \
+    [colourOptionsController2View setModalPresentationStyle:UIModalPresentationFullScreen]; \
+    [self._viewControllerForAncestor presentViewController:colourOptionsController2View animated:YES completion:nil];} settingItemId:0]]
+*/
 
 #define SWITCH_ITEM(t, d, k) [sectionItems addObject:[YTSettingsSectionItemClass switchItemWithTitle:t titleDescription:d accessibilityIdentifier:nil switchOn:IS_ENABLED(k) switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {[[NSUserDefaults standardUserDefaults] setBool:enabled forKey:k];return YES;} settingItemId:0]]
 
@@ -119,6 +133,7 @@ extern NSBundle *uYouPlusBundle();
 
     # pragma mark - App theme
     SECTION_HEADER(LOC(@"THEME_OPTIONS"));
+//  COLOR_BUTTON_ITEM2(@"Custom Theme Color", @"", ColourOptionsController2);
 
     YTSettingsSectionItem *themeGroup = [YTSettingsSectionItemClass
         itemWithTitle:LOC(@"DARK_THEME")
@@ -298,6 +313,7 @@ extern NSBundle *uYouPlusBundle();
         }
     ];
     [sectionItems addObject:lowContrastMode];
+//  COLOR_BUTTON_ITEM(@"Custom LowContrastMode Color", @"if you selected Custom Color than use this to modify the color.", ColourOptionsController);
     SWITCH_ITEM2(LOC(@"Fix LowContrastMode"), LOC(@"This will fix the LowContrastMode functionality by Spoofing to YouTube v17.38.10. App restart is required."), @"fixLowContrastMode_enabled");
     SWITCH_ITEM2(LOC(@"Disable Modern Buttons"), LOC(@"This will remove the new Modern / Chip Buttons in the YouTube App. but not all of them. App restart is required."), @"disableModernButtons_enabled");
     SWITCH_ITEM2(LOC(@"Disable Rounded Corners on Hints"), LOC(@"This will make the Hints in the App to not have Rounded Corners. App restart is required."), @"disableRoundedHints_enabled");
