@@ -883,9 +883,6 @@ static NSString *accessGroupID() {
     BOOL hideClipButton = IS_ENABLED(@"hideClipButton_enabled");
     BOOL hideSaveToPlaylistButton = IS_ENABLED(@"hideSaveToPlaylistButton_enabled");
 
-    CGFloat buttonSeparation = 8;
-    CGFloat currentX = 0;
-
     for (UIView *subview in self.subviews) {
         if ([subview.accessibilityLabel isEqualToString:@"connect account"]) {
             subview.hidden = hideConnectButton;
@@ -901,14 +898,6 @@ static NSString *accessGroupID() {
             subview.hidden = hideClipButton;
         } else if ([subview.accessibilityLabel isEqualToString:@"Save to playlist"]) {
             subview.hidden = hideSaveToPlaylistButton;
-        }
-        
-        if (!subview.hidden) {
-            CGRect frame = subview.frame;
-            frame.origin.x = currentX;
-            subview.frame = frame;
-
-            currentX += frame.size.width + buttonSeparation;
         }
     }
 }
