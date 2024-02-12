@@ -117,7 +117,7 @@ extern NSBundle *uYouPlusBundle();
             return VERSION_STRING;
         }
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-            return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/arichornlover/uYouEnhanced/releases/latest"]];
+            return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/yodaluca23Alt/uYouEnhanced/releases/latest"]];
         }
     ];
     [sectionItems addObject:version];
