@@ -221,6 +221,11 @@ static NSString *accessGroupID() {
 }
 %end
 
+// Remove App Rating Prompt in YouTube (for Sideloaded - iOS 14+) - @arichornlover
+%hook SKStoreReviewController
++ (void)requestReview { }
+%end
+
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
 %hook YTWatchMiniBarViewController
 - (void)updateMiniBarPlayerStateFromRenderer {
@@ -485,7 +490,7 @@ static NSString *accessGroupID() {
 }
 %end
 
-# pragma mark - Hide Notification Button && SponsorBlock Button
+# pragma mark - Hide Notification Button && SponsorBlock Button && uYouPlus Button
 %hook YTRightNavigationButtons
 - (void)layoutSubviews {
     %orig;
@@ -495,56 +500,10 @@ static NSString *accessGroupID() {
     if (IS_ENABLED(@"hideSponsorBlockButton_enabled")) { 
         self.sponsorBlockButton.hidden = YES;
     }
+    if (IS_ENABLED(@"hideuYouPlusButton_enabled")) { 
+        self.uYouPlusButton.hidden = YES;
+    }
 }
-%end
-
-// YTSpeed - https://github.com/Lyvendia/YTSpeed
-%group gYTSpeed
-%hook YTVarispeedSwitchController
-- (id)init {
-	id result = %orig;
-
-	const int size = 17;
-        float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 5.0};
-        id varispeedSwitchControllerOptions[size];
-
-	for (int i = 0; i < size; ++i) {
-		id title = [NSString stringWithFormat:@"%.2fx", speeds[i]];
-		varispeedSwitchControllerOptions[i] = [[%c(YTVarispeedSwitchControllerOption) alloc] initWithTitle:title rate:speeds[i]];
-	}
-
-	NSUInteger count = sizeof(varispeedSwitchControllerOptions) / sizeof(id);
-	NSArray *varispeedArray = [NSArray arrayWithObjects:varispeedSwitchControllerOptions count:count];
-	MSHookIvar<NSArray *>(self, "_options") = varispeedArray;
-
-	return result;
-}
-%end
-
-%hook MLHAMQueuePlayer
-- (void)setRate:(float)rate {
-	MSHookIvar<float>(self, "_rate") = rate;
-	MSHookIvar<float>(self, "_preferredRate") = rate;
-
-	id player = MSHookIvar<HAMPlayerInternal *>(self, "_player");
-	[player setRate: rate];
-	
-	id stickySettings = MSHookIvar<MLPlayerStickySettings *>(self, "_stickySettings");
-	[stickySettings setRate: rate];
-
-	[self.playerEventCenter broadcastRateChange: rate];
-
-	YTSingleVideoController *singleVideoController = self.delegate;
-	[singleVideoController playerRateDidChange: rate];
-}
-%end
-
-%hook YTPlayerViewController
-%property (nonatomic, assign) float playbackRate;
-- (void)singleVideo:(id)video playbackRateDidChange:(float)rate {
-	%orig;
-}
-%end
 %end
 
 # pragma mark - uYouPlus
@@ -647,7 +606,6 @@ static NSString *accessGroupID() {
     return IS_ENABLED(@"hideChannelWatermark_enabled") ? NO : %orig;
 }
 %end
-
 // Hide Channel Watermark (for Old YouTube Versions / Backwards Compatibility)
 %hook YTAnnotationsViewController
 - (void)loadFeaturedChannelWatermark {
@@ -686,12 +644,12 @@ static NSString *accessGroupID() {
 %end
 
 // Replace Next & Previous button with Fast forward & Rewind button
-%group gReplacePreviousAndNextButton
-%hook YTColdConfig
-- (BOOL)replaceNextPaddleWithFastForwardButtonForSingletonVods { return YES; }
-- (BOOL)replacePreviousPaddleWithRewindButtonForSingletonVods { return YES; }
-%end
-%end
+// %group gReplacePreviousAndNextButton
+// %hook YTColdConfig
+// - (BOOL)replaceNextPaddleWithFastForwardButtonForSingletonVods { return YES; }
+// - (BOOL)replacePreviousPaddleWithRewindButtonForSingletonVods { return YES; }
+// %end
+// %end
 
 // Hide Shadow Overlay Buttons (Play/Pause, Next, previous, Fast forward & Rewind buttons)
 %group gHideVideoPlayerShadowOverlayButtons
@@ -849,6 +807,66 @@ static NSString *accessGroupID() {
     %orig(color);
 }
 %end
+
+// uYouPlus Button in Navigation Bar (for Clear Cache and Color Options) - @arichornlover
+%hook YTRightNavigationButtons
+%property (retain, nonatomic) YTQTMButton *uYouPlusButton;
+- (NSMutableArray *)buttons {
+	NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"uYouPlus" ofType:@"bundle"];
+    NSString *uYouPlusLightSettingsPath;
+    NSString *uYouPlusDarkSettingsPath;
+    if (tweakBundlePath) {
+        NSBundle *tweakBundle = [NSBundle bundleWithPath:tweakBundlePath];
+        uYouPlusLightSettingsPath = [tweakBundle pathForResource:@"uYouPlus_logo" ofType:@"png"];
+		uYouPlusDarkSettingsPath = [tweakBundle pathForResource:@"uYouPlus_logo_dark" ofType:@"png"];
+    } else {
+		uYouPlusLightSettingsPath = ROOT_PATH_NS(@"/Localizations/uYouPlus.bundle/uYouPlus_logo.png");
+        uYouPlusDarkSettingsPath = ROOT_PATH_NS(@"/Localizations/uYouPlus.bundle/uYouPlus_logo_dark.png");
+    }
+    NSMutableArray *retVal = %orig.mutableCopy;
+    [self.uYouPlusButton removeFromSuperview];
+    [self addSubview:self.uYouPlusButton];
+    if (!self.uYouPlusButton) {
+        self.uYouPlusButton = [%c(YTQTMButton) iconButton];
+        [self.uYouPlusButton enableNewTouchFeedback];
+        self.uYouPlusButton.frame = CGRectMake(0, 0, 40, 40);
+        
+        if ([%c(YTPageStyleController) pageStyle] == 0) {
+            UIImage *setButtonMode = [UIImage imageWithContentsOfFile:uYouPlusDarkSettingsPath];
+            setButtonMode = [setButtonMode imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [self.uYouPlusButton setImage:setButtonMode forState:UIControlStateNormal];
+        }
+        else if ([%c(YTPageStyleController) pageStyle] == 1) {
+            UIImage *setButtonMode = [UIImage imageWithContentsOfFile:uYouPlusLightSettingsPath];
+            setButtonMode = [setButtonMode imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [self.uYouPlusButton setImage:setButtonMode forState:UIControlStateNormal];
+        }
+        
+        [self.uYouPlusButton addTarget:self action:@selector(uYouPlusRootOptionsAction) forControlEvents:UIControlEventTouchUpInside];
+        [retVal insertObject:self.uYouPlusButton atIndex:0];
+    }
+    return retVal;
+}
+- (NSMutableArray *)visibleButtons {
+    NSMutableArray *retVal = %orig.mutableCopy;
+    [self setLeadingPadding:+10];
+    if (self.uYouPlusButton) {
+        [self.uYouPlusButton removeFromSuperview];
+        [self addSubview:self.uYouPlusButton];
+        [retVal insertObject:self.uYouPlusButton atIndex:0];
+    }
+    return retVal;
+}
+%new;
+- (void)uYouPlusRootOptionsAction {
+    UINavigationController *uYouPlusRootOptionsControllerView = [[UINavigationController alloc] initWithRootViewController:[[RootOptionsController alloc] init]];
+    [uYouPlusRootOptionsControllerView setModalPresentationStyle:UIModalPresentationFullScreen];
+
+    UIViewController *rootPrefsViewController = [self _viewControllerForAncestor];
+    [rootPrefsViewController presentViewController:uYouPlusRootOptionsControllerView animated:YES completion:nil];
+}
+%end
+//
 
 // Hide the (Connect / Share / Remix / Thanks / Download / Clip / Save) Buttons under the Video Player - 17.x.x and up - @arichornlover
 %hook _ASDisplayView
@@ -1114,9 +1132,9 @@ static NSString *accessGroupID() {
     if (IS_ENABLED(@"hidePreviousAndNextButton_enabled")) {
         %init(gHidePreviousAndNextButton);
     }
-    if (IS_ENABLED(@"replacePreviousAndNextButton_enabled")) {
-        %init(gReplacePreviousAndNextButton);
-    }
+//  if (IS_ENABLED(@"replacePreviousAndNextButton_enabled")) {
+//      %init(gReplacePreviousAndNextButton);
+//  }
     if (IS_ENABLED(@"hideOverlayDarkBackground_enabled")) {
         %init(gHideOverlayDarkBackground);
     }
@@ -1134,9 +1152,6 @@ static NSString *accessGroupID() {
     }
     if (IS_ENABLED(@"hideChipBar_enabled")) {
         %init(gHideChipBar);
-    }
-    if (IS_ENABLED(@"ytSpeed_enabled")) {
-        %init(gYTSpeed);
     }
     if (IS_ENABLED(@"portraitFullscreen_enabled")) {
         %init(gPortraitFullscreen);

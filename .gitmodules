@@ -1,10 +1,10 @@
 [submodule "Tweaks/YTUHD"]
 	path = Tweaks/YTUHD
-	url = https://github.com/arichorn/YTUHD.git
+	url = https://github.com/arichornloverALT/YTUHD.git
 	branch = master
 [submodule "Tweaks/YouPiP"]
 	path = Tweaks/YouPiP
-	url = https://github.com/arichorn/YouPiP.git
+	url = https://github.com/arichornloverALT/YouPiP.git
 	branch = main
 [submodule "Tweaks/YouMute"]
 	path = Tweaks/YouMute
@@ -12,15 +12,15 @@
 	branch = main
 [submodule "Tweaks/YouQuality"]
 	path = Tweaks/YouQuality
-	url = https://github.com/arichorn/YouQuality.git
+	url = https://github.com/arichornloverALT/YouQuality.git
 	branch = main
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
-	url = https://github.com/arichorn/YTVideoOverlay.git
+	url = https://github.com/arichornloverALT/YTVideoOverlay.git
 	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
-	url = https://github.com/arichorn/Return-YouTube-Dislikes.git
+	url = https://github.com/arichornloverALT/Return-YouTube-Dislikes.git
 	branch = uYouEnhanced
 [submodule "Tweaks/YouTubeHeader"]
 	path = Tweaks/YouTubeHeader
@@ -62,7 +62,7 @@
 	url = https://github.com/PoomSmart/NoYTPremium.git
 [submodule "Tweaks/YTSpeed"]
 	path = Tweaks/YTSpeed
-	url = https://github.com/therealFoxster/YTSpeed.git
+	url = https://github.com/arichornlover/YTSpeed.git
 [submodule "Tweaks/MrBeastify"]
 	path = Tweaks/MrBeastify
 	url = https://github.com/arichornlover/MrBeastify.git

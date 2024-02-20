@@ -8,6 +8,11 @@
 
 @interface YTPlayerViewController : UIViewController
 -(YTSingleVideoController *)activeVideo;
+- (void)autoFullscreen; // YTAutoFullScreen
+// YTSpeed
+@property id activeVideo;
+@property float playbackRate;
+- (void)singleVideo:(id)video playbackRateDidChange:(float)rate;
 @end
 
 @interface PlayerManager : NSObject

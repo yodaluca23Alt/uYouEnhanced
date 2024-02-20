@@ -13,18 +13,6 @@
 
 #define SECTION_HEADER(s) [sectionItems addObject:[%c(YTSettingsSectionItem) itemWithTitle:@"\t" titleDescription:[s uppercaseString] accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger sectionItemIndex) { return NO; }]]
 
-/* broken button implementation. I tried.
-#define COLOR_BUTTON_ITEM(t, d, ColourOptionsController) [sectionItems addObject:[YTSettingsSectionItemClass buttonItemWithTitle:t titleDescription:d accessibilityIdentifier:nil buttonBlock:^(YTSettingsCell *cell) {\
-    UINavigationController *colourOptionsControllerView = [[UINavigationController alloc] initWithRootViewController:[[ColourOptionsController alloc] init]]; \
-    [colourOptionsControllerView setModalPresentationStyle:UIModalPresentationFullScreen]; \
-    [self._viewControllerForAncestor presentViewController:colourOptionsControllerView animated:YES completion:nil];} settingItemId:0]]
-
-#define COLOR_BUTTON_ITEM2(t, d, ColourOptionsController2) [sectionItems addObject:[YTSettingsSectionItemClass buttonItemWithTitle:t titleDescription:d accessibilityIdentifier:nil buttonBlock:^(YTSettingsCell *cell) {\
-    UINavigationController *colourOptionsController2View = [[UINavigationController alloc] initWithRootViewController:[[ColourOptionsController2 alloc] init]]; \
-    [colourOptionsController2View setModalPresentationStyle:UIModalPresentationFullScreen]; \
-    [self._viewControllerForAncestor presentViewController:colourOptionsController2View animated:YES completion:nil];} settingItemId:0]]
-*/
-
 #define SWITCH_ITEM(t, d, k) [sectionItems addObject:[YTSettingsSectionItemClass switchItemWithTitle:t titleDescription:d accessibilityIdentifier:nil switchOn:IS_ENABLED(k) switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {[[NSUserDefaults standardUserDefaults] setBool:enabled forKey:k];return YES;} settingItemId:0]]
 
 #define SWITCH_ITEM2(t, d, k) [sectionItems addObject:[YTSettingsSectionItemClass switchItemWithTitle:t titleDescription:d accessibilityIdentifier:nil switchOn:IS_ENABLED(k) switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {[[NSUserDefaults standardUserDefaults] setBool:enabled forKey:k];SHOW_RELAUNCH_YT_SNACKBAR;return YES;} settingItemId:0]]
@@ -39,7 +27,6 @@ static const NSInteger uYouPlusSection = 500;
 
 @interface YTSettingsSectionItemManager (uYouPlus)
 - (void)updateTweakSectionWithEntry:(id)entry;
-// - (NSString *)getCacheSize;
 @end
 
 extern NSBundle *uYouPlusBundle();
@@ -81,24 +68,6 @@ extern NSBundle *uYouPlusBundle();
 %end
 
 %hook YTSettingsSectionItemManager
-/* BROKEN
-- (NSString *)getCacheSize {
-    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-    NSArray *filesArray = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:cachePath error:nil];
-
-    unsigned long long int folderSize = 0;
-    for (NSString *fileName in filesArray) {
-        NSString *filePath = [cachePath stringByAppendingPathComponent:fileName];
-        NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
-        folderSize += [fileAttributes fileSize];
-    }
-
-    NSByteCountFormatter *formatter = [[NSByteCountFormatter alloc] init];
-    formatter.countStyle = NSByteCountFormatterCountStyleFile;
-
-    return [formatter stringFromByteCount:folderSize];
-}
-*/
 %new(v@:@)
 - (void)updateTweakSectionWithEntry:(id)entry {
     NSMutableArray *sectionItems = [NSMutableArray array];
@@ -149,33 +118,8 @@ extern NSBundle *uYouPlusBundle();
     ];
     [sectionItems addObject:exitYT];
 
-/* DISABLED
-# pragma mark - Cache
-    SECTION_HEADER(@"Cache");
-    YTSettingsSectionItem *clearCache = [%c(YTSettingsSectionItem)
-        itemWithTitle:LOC(@"Clear Cache")
-        titleDescription:[self getCacheSize]
-        accessibilityIdentifier:nil
-        detailTextBlock:nil
-        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-                [[NSFileManager defaultManager] removeItemAtPath:cachePath error:nil];
-
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [settingsViewController reloadData];
-                });
-            });
-
-            return YES;
-        }
-    ];
-    [sectionItems addObject:clearCache];
-*/
-
     # pragma mark - App theme
     SECTION_HEADER(LOC(@"THEME_OPTIONS"));
-//  COLOR_BUTTON_ITEM2(@"Custom Theme Color", @"", ColourOptionsController2);
 
     YTSettingsSectionItem *themeGroup = [YTSettingsSectionItemClass
         itemWithTitle:LOC(@"DARK_THEME")
@@ -257,7 +201,7 @@ extern NSBundle *uYouPlusBundle();
     SWITCH_ITEM2(LOC(@"SNAP_TO_CHAPTER"), LOC(@"SNAP_TO_CHAPTER_DESC"), @"snapToChapter_enabled");
     SWITCH_ITEM2(LOC(@"PINCH_TO_ZOOM"), LOC(@"PINCH_TO_ZOOM_DESC"), @"pinchToZoom_enabled");
     SWITCH_ITEM(LOC(@"YT_MINIPLAYER"), LOC(@"YT_MINIPLAYER_DESC"), @"ytMiniPlayer_enabled");
-    SWITCH_ITEM(LOC(@"STOCK_VOLUME_HUD"), LOC(@"STOCK_VOLUME_HUD_DESC"), @"stockVolumeHUD_enabled");
+    SWITCH_ITEM2(LOC(@"STOCK_VOLUME_HUD"), LOC(@"STOCK_VOLUME_HUD_DESC"), @"stockVolumeHUD_enabled");
 
     # pragma mark - Video controls overlay options
     SECTION_HEADER(LOC(@"VIDEO_CONTROLS_OVERLAY_OPTIONS"));
@@ -271,7 +215,6 @@ extern NSBundle *uYouPlusBundle();
     SWITCH_ITEM2(LOC(@"HIDE_CHANNEL_WATERMARK"), LOC(@"HIDE_CHANNEL_WATERMARK_DESC"), @"hideChannelWatermark_enabled");
     SWITCH_ITEM2(LOC(@"Hide Shadow Overlay Buttons"), LOC(@"Hide the Shadow Overlay on the Play/Pause, Previous, Next, Forward & Rewind Buttons."), @"hideVideoPlayerShadowOverlayButtons_enabled");
     SWITCH_ITEM(LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON"), LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC"), @"hidePreviousAndNextButton_enabled");
-    SWITCH_ITEM2(LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON"), LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON_DESC"), @"replacePreviousAndNextButton_enabled");
     SWITCH_ITEM2(LOC(@"RED_PROGRESS_BAR"), LOC(@"RED_PROGRESS_BAR_DESC"), @"redProgressBar_enabled");
     SWITCH_ITEM(LOC(@"HIDE_HOVER_CARD"), LOC(@"HIDE_HOVER_CARD_DESC"), @"hideHoverCards_enabled");
     SWITCH_ITEM2(LOC(@"HIDE_RIGHT_PANEL"), LOC(@"HIDE_RIGHT_PANEL_DESC"), @"hideRightPanel_enabled");
@@ -280,7 +223,6 @@ extern NSBundle *uYouPlusBundle();
     SWITCH_ITEM2(LOC(@"Hide Dark Overlay Background"), LOC(@"Hide video player's dark overlay background. App restart is required."), @"hideOverlayDarkBackground_enabled");
     SWITCH_ITEM2(LOC(@"Disable Ambient Mode in Fullscreen"), LOC(@"When Enabled, this will Disable the functionality of Ambient Mode from being used in the Video Player when in Fullscreen. App restart is required."), @"disableAmbientMode_enabled");
     SWITCH_ITEM2(LOC(@"Hide Suggested Videos in Fullscreen"), LOC(@"Hide video player's suggested videos whenever in fullscreen. App restart is required."), @"noVideosInFullscreen_enabled");
-    SWITCH_ITEM2(LOC(@"Enable YTSpeed"), LOC(@"Enable YTSpeed to have more Playback Speed Options. App restart is required."), @"ytSpeed_enabled");
 
    # pragma mark - Shorts controls overlay options
     SECTION_HEADER(LOC(@"SHORTS_CONTROLS_OVERLAY_OPTIONS"));
@@ -358,7 +300,6 @@ extern NSBundle *uYouPlusBundle();
         }
     ];
     [sectionItems addObject:lowContrastMode];
-//  COLOR_BUTTON_ITEM(@"Custom LowContrastMode Color", @"if you selected Custom Color than use this to modify the color.", ColourOptionsController);
     SWITCH_ITEM2(LOC(@"Fix LowContrastMode"), LOC(@"This will fix the LowContrastMode functionality by Spoofing to YouTube v17.38.10. App restart is required."), @"fixLowContrastMode_enabled");
     SWITCH_ITEM2(LOC(@"Disable Modern Buttons"), LOC(@"This will remove the new Modern / Chip Buttons in the YouTube App. but not all of them. App restart is required."), @"disableModernButtons_enabled");
     SWITCH_ITEM2(LOC(@"Disable Rounded Corners on Hints"), LOC(@"This will make the Hints in the App to not have Rounded Corners. App restart is required."), @"disableRoundedHints_enabled");
@@ -1114,7 +1055,8 @@ extern NSBundle *uYouPlusBundle();
     SWITCH_ITEM(LOC(@"CAST_CONFIRM"), LOC(@"CAST_CONFIRM_DESC"), @"castConfirm_enabled");
     SWITCH_ITEM(LOC(@"DISABLE_HINTS"), LOC(@"DISABLE_HINTS_DESC"), @"disableHints_enabled");
     SWITCH_ITEM(LOC(@"Stick Navigation Bar"), LOC(@"Enable to make the Navigation Bar stay on the App when scrolling."), @"stickNavigationBar_enabled");
-    SWITCH_ITEM(LOC(@"Hide iSponsorBlock button in the Navigation bar"), LOC(@""), @"hideSponsorBlockButton_enabled");
+    SWITCH_ITEM2(LOC(@"HIDE_ISPONSORBLOCK"), nil, @"hideSponsorBlockButton_enabled");
+    SWITCH_ITEM2(LOC(@"Hides uYouPlus button"), nil, @"hideuYouPlusButton_enabled");
     SWITCH_ITEM(LOC(@"HIDE_CHIP_BAR"), LOC(@"HIDE_CHIP_BAR_DESC"), @"hideChipBar_enabled");
     SWITCH_ITEM(LOC(@"HIDE_PLAY_NEXT_IN_QUEUE"), LOC(@"HIDE_PLAY_NEXT_IN_QUEUE_DESC"), @"hidePlayNextInQueue_enabled");
     SWITCH_ITEM2(LOC(@"Hide Community Posts"), LOC(@"Hides the Community Posts. App restart is required."), @"hideCommunityPosts_enabled");

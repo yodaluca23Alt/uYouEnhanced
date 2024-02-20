@@ -1,17 +1,15 @@
 #import "ColourOptionsController2.h"
-#import "../uYouPlus.h"
+#import "uYouPlus.h"
 
 @interface ColourOptionsController2 ()
-- (void)coloursView;
 @end
 
 @implementation ColourOptionsController2
 
 - (void)loadView {
 	[super loadView];
-    [self coloursView];
 
-    self.title = @"Custom Text/Etc. Color";
+    self.title = @"Custom Tint Color";
     
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(close)];
     self.navigationItem.rightBarButtonItem = closeButton;
@@ -28,19 +26,6 @@
     [lcmUnarchiver setRequiresSecureCoding:NO];
     UIColor *color = [lcmUnarchiver decodeObjectForKey:NSKeyedArchiveRootObjectKey];
     self.selectedColor = color;
-}
-
-- (void)coloursView {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
-        self.view.backgroundColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.969 alpha:1.0];
-        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
-        self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-    }
-    else {
-        self.view.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    }
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
