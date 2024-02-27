@@ -1,4 +1,6 @@
 #import <UIKit/UIKit.h>
+#import <LocalAuthentication/LocalAuthentication.h>
+#import <CaptainHook/CaptainHook.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import <dlfcn.h>
@@ -6,7 +8,7 @@
 #import <substrate.h>
 #import <rootless.h>
 
-#import "RootOptionsController.h"
+#import "uYouPlusThemes.h"
 #import "Tweaks/YouTubeHeader/YTAppDelegate.h"
 #import "Tweaks/YouTubeHeader/YTQTMButton.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
@@ -20,19 +22,21 @@
 #import "Tweaks/YouTubeHeader/YTIButtonRenderer.h"
 #import "Tweaks/YouTubeHeader/YTISectionListRenderer.h"
 #import "Tweaks/YouTubeHeader/YTColorPalette.h"
-#import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
 #import "Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
-#import "Tweaks/YouTubeHeader/ASCollectionView.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
 #import "Tweaks/YouTubeHeader/YTReelWatchPlaybackOverlayView.h"
 #import "Tweaks/YouTubeHeader/YTReelPlayerBottomButton.h"
 #import "Tweaks/YouTubeHeader/YTReelPlayerViewController.h"
 #import "Tweaks/YouTubeHeader/YTIMenuConditionalServiceItemRenderer.h"
+#import "Tweaks/YouTubeHeader/YTInlinePlayerBarContainerView.h"
 #import "Tweaks/YouTubeHeader/YTPivotBarItemView.h"
-#import "Tweaks/YouTubeHeader/YTVideoWithContextNode.h" // YouTube-X
+// Hide buttons under the video player by @PoomSmart
+#import "Tweaks/YouTubeHeader/ASCollectionElement.h"
+
+// YouTube-X
+#import "Tweaks/YouTubeHeader/YTVideoWithContextNode.h"
 #import "Tweaks/YouTubeHeader/ELMCellNode.h" // YouTube-X
-#import "Tweaks/YouTubeHeader/ELMNodeController.h" // YouTube-X
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define IS_ENABLED(k) [[NSUserDefaults standardUserDefaults] boolForKey:k]
@@ -59,7 +63,7 @@
 
 @interface YTPlayabilityResolutionUserActionUIController : NSObject // Skips content warning before playing *some videos - @PoomSmart
 - (void)confirmAlertDidPressConfirm;
-@end 
+@end
 
 @interface YTMainAppControlsOverlayView : UIView
 @end
@@ -87,7 +91,7 @@
 @property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
 @end
 
-@interface YTPlaylistHeaderViewController: UIViewController
+@interface YTPlaylistHeaderViewController : UIViewController
 @property UIButton *downloadsButton;
 @end
 
@@ -119,7 +123,7 @@
 - (void)internalSetRate;
 @end
 
-@interface MLPlayerStickySettings : NSObject
+@interface MLPlayerStickySettings (uYouPlus)
 - (void)setRate:(float)rate;
 @end
 
@@ -157,28 +161,7 @@
 @interface YCHLiveChatView : UIView
 @end
 
-@interface YTFullscreenEngagementOverlayView : UIView
-@end
-
-@interface YTRelatedVideosView : UIView
-@end
-
-@interface YTTopAlignedView : UIView
-@end
-
 @interface ELMView : UIView
-@end
-
-@interface ASWAppSwitcherCollectionViewCell : UIView
-@end
-
-@interface ASScrollView : UIView
-@end
-
-@interface UIKeyboardLayoutStar : UIView
-@end
-
-@interface UIKeyboardDockView : UIView
 @end
 
 @interface _ASDisplayView : UIView
@@ -191,45 +174,4 @@
 @end
 
 @interface YTPivotBarIndicatorView : UIView
-@end
-
-@interface YTCommentDetailHeaderCell : UIView
-@end
-
-@interface SponsorBlockSettingsController : UITableViewController
-@end
-
-@interface SponsorBlockViewController : UIViewController
-@end
-
-@interface UICandidateViewController : UIViewController
-@end
-
-@interface UIPredictionViewController : UIViewController
-@end
-
-@interface FRPreferences : UITableViewController
-@end
-
-@interface FRPSelectListTable : UITableViewController
-@end
-
-@interface settingsReorderTable : UIViewController
-@property(nonatomic, strong) UITableView *tableView;
-@end
-
-// Snack bar
-@interface YTHUDMessage : NSObject
-+ (id)messageWithText:(id)text;
-- (void)setAction:(id)action;
-@end
-
-@interface GOOHUDMessageAction : NSObject
-- (void)setTitle:(NSString *)title;
-- (void)setHandler:(void (^)(id))handler;
-@end
-
-@interface GOOHUDManagerInternal : NSObject
-- (void)showMessageMainThread:(id)message;
-+ (id)sharedInstance;
 @end

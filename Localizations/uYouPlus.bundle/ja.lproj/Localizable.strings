@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "自動再生ボタンを非表示";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "字幕ボタンを非表示";
 "HIDE_SUBTITLES_BUTTON_DESC" = "";
 

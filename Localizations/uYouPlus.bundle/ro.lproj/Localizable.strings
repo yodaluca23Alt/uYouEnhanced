@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Ascunde comutatorul Redare automată";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Ascunde comutatorul Redare automată din controalele video.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Ascunde butonul Subtitrări";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Ascunde butonul Subtitrări din controalele video.";
 

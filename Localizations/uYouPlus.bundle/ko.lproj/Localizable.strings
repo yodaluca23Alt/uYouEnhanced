@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "자동재생 스위치 숨기기";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "비디오 재생 오버레이에서 자동재생 스위치를 숨깁니다.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "자막 버튼 숨기기";
 "HIDE_SUBTITLES_BUTTON_DESC" = "비디오 재생 오버레이에서 자막 버튼을 숨깁니다.";
 

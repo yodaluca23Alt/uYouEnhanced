@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "隱藏自動播放開關";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "在影片控制中隱藏自動播放開關。";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "隱藏字幕按鈕";
 "HIDE_SUBTITLES_BUTTON_DESC" = "隱藏影片控制層中的字幕按鈕。";
 

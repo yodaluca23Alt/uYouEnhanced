@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Скрыть «Автовоспроизведение»";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Убирает тумблер «Автовоспроизведение» с оверлея плеера.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Скрыть «Субтитры»";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Скрывает кнопку субтитров с оверлея плеера.";
 

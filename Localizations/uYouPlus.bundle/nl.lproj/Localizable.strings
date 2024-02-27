@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Verberg Autoplay schakelaar";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Verberg de Autoplay schakelaar in de video speler.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Verberg ondertitels knop";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Verberg de ondertitels knop in de video speler.";
 

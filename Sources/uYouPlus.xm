@@ -1,4 +1,5 @@
 #import "uYouPlus.h"
+#import "RootOptionsController.h"
 
 // Tweak's bundle for Localizations support - @PoomSmart - https://github.com/PoomSmart/YouPiP/commit/aea2473f64c75d73cab713e1e2d5d0a77675024f
 NSBundle *uYouPlusBundle() {
@@ -499,9 +500,11 @@ static NSString *accessGroupID() {
     }
     if (IS_ENABLED(@"hideSponsorBlockButton_enabled")) { 
         self.sponsorBlockButton.hidden = YES;
+        self.sponsorBlockButton.frame = CGRectZero;
     }
     if (IS_ENABLED(@"hideuYouPlusButton_enabled")) { 
         self.uYouPlusButton.hidden = YES;
+        self.uYouPlusButton.frame = CGRectZero;
     }
 }
 %end
@@ -568,7 +571,7 @@ static NSString *accessGroupID() {
 %end
 
 // Video Controls Overlay Options
-// Hide CC / Autoplay switch / Enable Share Button / Enable Save to Playlist Button
+// Hide CC / Hide Autoplay switch / Hide YTMusic Button / Enable Share Button / Enable Save to Playlist Button
 %hook YTMainAppControlsOverlayView
 - (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
     return IS_ENABLED(@"hideCC_enabled") ? %orig(NO) : %orig;
@@ -576,6 +579,12 @@ static NSString *accessGroupID() {
 - (void)setAutoplaySwitchButtonRenderer:(id)arg1 { // hide Autoplay
     if (IS_ENABLED(@"hideAutoplaySwitch_enabled")) {}
     else { return %orig; }
+}
+- (void)setYoutubeMusicButton:(id)arg1 {
+    if (IS_ENABLED(@"hideYTMusicButton_enabled")) {
+    } else {
+        %orig(arg1);
+    }
 }
 - (void)setShareButtonAvailable:(BOOL)arg1 {
     if (IS_ENABLED(@"enableShareButton_enabled")) {
@@ -589,6 +598,22 @@ static NSString *accessGroupID() {
         %orig(YES);
     } else {
         %orig(NO);
+    }
+}
+%end
+
+// Hide Fullscreen Button
+%hook YTInlinePlayerBarContainerView
+- (void)layoutSubviews {
+    %orig; 
+    if (IS_ENABLED(@"disableFullscreenButton_enabled")) {
+        if (self.exitFullscreenButton) {
+            [self.exitFullscreenButton removeFromSuperview];
+        }
+        if (self.enterFullscreenButton) {
+            [self.enterFullscreenButton removeFromSuperview];
+        }
+        self.fullscreenButtonDisabled = YES;
     }
 }
 %end
@@ -614,24 +639,15 @@ static NSString *accessGroupID() {
 }
 %end
 
-// Hide Next & Previous button
 %group gHidePreviousAndNextButton
 %hook YTColdConfig
-- (BOOL)removeNextPaddleForSingletonVideos { return YES; }
-- (BOOL)removePreviousPaddleForSingletonVideos { return YES; }
+- (BOOL)removeNextPaddleForAllVideos { 
+    return YES; 
+}
+- (BOOL)removePreviousPaddleForAllVideos { 
+    return YES; 
+}
 %end
-
-// %hook YTMainAppControlsOverlayView // this is only used for v16.xx.x (issues if using with YouTube v17.xx.x up to latest)
-// - (void)layoutSubviews { // hide Next & Previous legacy buttons
-//     %orig;
-//     if (IsEnabled(@"hidePreviousAndNextButton_enabled")) { 
-//    	      MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
-//         MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
-//        MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
-//    MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
-//     }
-// }
-// %end
 %end
 
 // Hide Dark Overlay Background
@@ -813,15 +829,12 @@ static NSString *accessGroupID() {
 %property (retain, nonatomic) YTQTMButton *uYouPlusButton;
 - (NSMutableArray *)buttons {
 	NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"uYouPlus" ofType:@"bundle"];
-    NSString *uYouPlusLightSettingsPath;
-    NSString *uYouPlusDarkSettingsPath;
+    NSString *uYouPlusMainSettingsPath;
     if (tweakBundlePath) {
         NSBundle *tweakBundle = [NSBundle bundleWithPath:tweakBundlePath];
-        uYouPlusLightSettingsPath = [tweakBundle pathForResource:@"uYouPlus_logo" ofType:@"png"];
-		uYouPlusDarkSettingsPath = [tweakBundle pathForResource:@"uYouPlus_logo_dark" ofType:@"png"];
+	uYouPlusMainSettingsPath = [tweakBundle pathForResource:@"uYouPlus_logo_main" ofType:@"png"];
     } else {
-		uYouPlusLightSettingsPath = ROOT_PATH_NS(@"/Localizations/uYouPlus.bundle/uYouPlus_logo.png");
-        uYouPlusDarkSettingsPath = ROOT_PATH_NS(@"/Localizations/uYouPlus.bundle/uYouPlus_logo_dark.png");
+        uYouPlusMainSettingsPath = ROOT_PATH_NS(@"/Localizations/uYouPlus.bundle/uYouPlus_logo_main.png");
     }
     NSMutableArray *retVal = %orig.mutableCopy;
     [self.uYouPlusButton removeFromSuperview];
@@ -832,14 +845,16 @@ static NSString *accessGroupID() {
         self.uYouPlusButton.frame = CGRectMake(0, 0, 40, 40);
         
         if ([%c(YTPageStyleController) pageStyle] == 0) {
-            UIImage *setButtonMode = [UIImage imageWithContentsOfFile:uYouPlusDarkSettingsPath];
+            UIImage *setButtonMode = [UIImage imageWithContentsOfFile:uYouPlusMainSettingsPath];
             setButtonMode = [setButtonMode imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [self.uYouPlusButton setImage:setButtonMode forState:UIControlStateNormal];
+            [self.uYouPlusButton setTintColor:UIColor.blackColor];
         }
         else if ([%c(YTPageStyleController) pageStyle] == 1) {
-            UIImage *setButtonMode = [UIImage imageWithContentsOfFile:uYouPlusLightSettingsPath];
+            UIImage *setButtonMode = [UIImage imageWithContentsOfFile:uYouPlusMainSettingsPath];
             setButtonMode = [setButtonMode imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [self.uYouPlusButton setImage:setButtonMode forState:UIControlStateNormal];
+            [self.uYouPlusButton setTintColor:UIColor.whiteColor];
         }
         
         [self.uYouPlusButton addTarget:self action:@selector(uYouPlusRootOptionsAction) forControlEvents:UIControlEventTouchUpInside];
@@ -859,51 +874,98 @@ static NSString *accessGroupID() {
 }
 %new;
 - (void)uYouPlusRootOptionsAction {
-    UINavigationController *uYouPlusRootOptionsControllerView = [[UINavigationController alloc] initWithRootViewController:[[RootOptionsController alloc] init]];
-    [uYouPlusRootOptionsControllerView setModalPresentationStyle:UIModalPresentationFullScreen];
-
-    UIViewController *rootPrefsViewController = [self _viewControllerForAncestor];
-    [rootPrefsViewController presentViewController:uYouPlusRootOptionsControllerView animated:YES completion:nil];
+    UINavigationController *rootOptionsControllerView = [[UINavigationController alloc] initWithRootViewController:[[RootOptionsController alloc] init]];
+    [rootOptionsControllerView setModalPresentationStyle:UIModalPresentationFullScreen];
+    
+    [self._viewControllerForAncestor presentViewController:rootOptionsControllerView animated:YES completion:nil];
 }
 %end
-//
 
-// Hide the (Connect / Share / Remix / Thanks / Download / Clip / Save) Buttons under the Video Player - 17.x.x and up - @arichornlover
+// Hide the (Connect / Share / Thanks / Save) Buttons under the Video Player - 17.x.x and up - @PoomSmart (inspired by @arichornlover)
 %hook _ASDisplayView
 - (void)layoutSubviews {
     %orig;
     BOOL hideConnectButton = IS_ENABLED(@"hideConnectButton_enabled");
     BOOL hideShareButton = IS_ENABLED(@"hideShareButton_enabled");
-    BOOL hideRemixButton = IS_ENABLED(@"hideRemixButton_enabled");
+//    BOOL hideRemixButton = IS_ENABLED(@"hideRemixButton_enabled"); // OLD
     BOOL hideThanksButton = IS_ENABLED(@"hideThanksButton_enabled");
-    BOOL hideAddToOfflineButton = IS_ENABLED(@"hideAddToOfflineButton_enabled");
-    BOOL hideClipButton = IS_ENABLED(@"hideClipButton_enabled");
+//    BOOL hideAddToOfflineButton = IS_ENABLED(@"hideAddToOfflineButton_enabled"); // OLD
+//    BOOL hideClipButton = IS_ENABLED(@"hideClipButton_enabled"); // OLD
     BOOL hideSaveToPlaylistButton = IS_ENABLED(@"hideSaveToPlaylistButton_enabled");
 
     for (UIView *subview in self.subviews) {
         if ([subview.accessibilityLabel isEqualToString:@"connect account"]) {
             subview.hidden = hideConnectButton;
+ //         subview.frame = hideConnectButton ? CGRectZero : subview.frame;
         } else if ([subview.accessibilityIdentifier isEqualToString:@"id.video.share.button"] || [subview.accessibilityLabel isEqualToString:@"Share"]) {
             subview.hidden = hideShareButton;
-        } else if ([subview.accessibilityIdentifier isEqualToString:@"id.video.remix.button"] || [subview.accessibilityLabel isEqualToString:@"Create a Short with this video"]) {
-            subview.hidden = hideRemixButton;
+//          subview.frame = hideShareButton ? CGRectZero : subview.frame;
         } else if ([subview.accessibilityLabel isEqualToString:@"Thanks"]) {
             subview.hidden = hideThanksButton;
-        } else if ([subview.accessibilityIdentifier isEqualToString:@"id.ui.add_to.offline.button"] || [subview.accessibilityLabel isEqualToString:@"Download"]) {
-            subview.hidden = hideAddToOfflineButton;
-        } else if ([subview.accessibilityLabel isEqualToString:@"Clip"]) {
-            subview.hidden = hideClipButton;
+//          subview.frame = hideThanksButton ? CGRectZero : subview.frame;
         } else if ([subview.accessibilityLabel isEqualToString:@"Save to playlist"]) {
             subview.hidden = hideSaveToPlaylistButton;
+ //         subview.frame = hideSaveToPlaylistButton ? CGRectZero : subview.frame;
         }
     }
 }
 %end
 
+static BOOL findCell(ASNodeController *nodeController, NSArray <NSString *> *identifiers) {
+    for (id child in [nodeController children]) {
+        if ([child isKindOfClass:%c(ELMNodeController)]) {
+            NSArray <ELMComponent *> *elmChildren = [(ELMNodeController *)child children];
+            for (ELMComponent *elmChild in elmChildren) {
+                for (NSString *identifier in identifiers) {
+                    if ([[elmChild description] containsString:identifier])
+                        return YES;
+                }
+            }
+        }
+
+        if ([child isKindOfClass:%c(ASNodeController)]) {
+            ASDisplayNode *childNode = ((ASNodeController *)child).node; // ELMContainerNode
+            NSArray *yogaChildren = childNode.yogaChildren;
+            for (ASDisplayNode *displayNode in yogaChildren) {
+                if ([identifiers containsObject:displayNode.accessibilityIdentifier])
+                    return YES;
+            }
+
+            return findCell(child, identifiers);
+        }
+
+        return NO;
+    }
+    return NO;
+}
+
+%hook ASCollectionView
+
+- (CGSize)sizeForElement:(ASCollectionElement *)element {
+    if ([self.accessibilityIdentifier isEqualToString:@"id.video.scrollable_action_bar"]) {
+        ASCellNode *node = [element node];
+        ASNodeController *nodeController = [node controller];
+        if (IS_ENABLED(@"hideRemixButton_enabled") && findCell(nodeController, @[@"id.video.remix.button"])) {
+            return CGSizeZero;
+        }
+
+        if (IS_ENABLED(@"hideClipButton_enabled") && findCell(nodeController, @[@"clip_button.eml"])) {
+            return CGSizeZero;
+        }
+
+        if (IS_ENABLED(@"hideDownloadButton_enabled") && findCell(nodeController, @[@"id.ui.add_to.offline.button"])) {
+            return CGSizeZero;
+        }
+    }
+    return %orig;
+}
+
+%end
+
 // Hide the (Download) Button under the Video Player - Legacy Version - @arichorn
 %hook YTISlimMetadataButtonSupportedRenderers
 - (BOOL)slimButton_isOfflineButton {
-    return IS_ENABLED(@"hideAddToOfflineButton_enabled") ? NO : %orig;
+    return IS_ENABLED(@"hideDownloadButton_enabled") ? NO : %orig;
 }
 %end
 

@@ -24,6 +24,8 @@ jobs:
           git add .
           git submodule update --init --recursive --remote Tweaks/YTHoldForSpeed
           git add .
+          git submodule update --init --recursive --remote Tweaks/YTSpeed
+          git add .
           git submodule update --init --recursive --remote Tweaks/MrBeastify
           git add .
           git submodule update --init --recursive --remote Tweaks/PSHeader

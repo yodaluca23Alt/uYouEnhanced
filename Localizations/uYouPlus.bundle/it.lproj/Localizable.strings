@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Nascondi Interruttore Riproduzione Automatica";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Nasconde il controllo per la riproduzione automatica in sovrimpressione al video.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Nascondi Bottone Sottotitoli";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Nasconde il controllo per i sottotitoli in sovrimpressione al video.";
 

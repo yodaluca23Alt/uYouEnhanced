@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Az automatikus lejátszás kapcsoló elrejtése";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Az Automatikus lejátszás kapcsoló elrejtése a videovezérlők fedvényében.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Feliratok elrejtése";
 "HIDE_SUBTITLES_BUTTON_DESC" = "A Feliratok gomb elrejtése a videóvezérlők fedvényében.";
 

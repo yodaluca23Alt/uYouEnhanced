@@ -16,18 +16,18 @@
     self.navigationItem.leftBarButtonItem = doneButton;
 
     UITableViewStyle style;
-        if (@available(iOS 13, *)) {
-            style = UITableViewStyleInsetGrouped;
-        } else {
-            style = UITableViewStyleGrouped;
-        }
+    if (@available(iOS 13, *)) {
+        style = UITableViewStyleInsetGrouped;
+    } else {
+        style = UITableViewStyleGrouped;
+    }
 
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
-    
+
     [NSLayoutConstraint activateConstraints:@[
         [self.tableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
         [self.tableView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
@@ -37,7 +37,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -46,7 +46,7 @@
     }
     if (section == 1) {
         return 1;
-    }    
+    }
     return 0;
 }
 
@@ -62,11 +62,10 @@
             cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
             cell.textLabel.textColor = [UIColor blackColor];
             cell.detailTextLabel.textColor = [UIColor blackColor];
-        }
-        else {
+        } else {
             cell.backgroundColor = [UIColor colorWithRed:0.110 green:0.110 blue:0.118 alpha:1.0];
             cell.textLabel.textColor = [UIColor whiteColor];
-	          cell.textLabel.shadowColor = [UIColor blackColor];
+            cell.textLabel.shadowColor = [UIColor blackColor];
             cell.textLabel.shadowOffset = CGSizeMake(1.0, 1.0);
             cell.detailTextLabel.textColor = [UIColor whiteColor];
         }
@@ -74,13 +73,13 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             if (indexPath.row == 0) {
                 cell.textLabel.text = @"Custom Theme Color";
-		            cell.imageView.image = [UIImage systemImageNamed:@"slider.horizontal.3"];
-		            cell.imageView.tintColor = cell.textLabel.textColor;
+                cell.imageView.image = [UIImage systemImageNamed:@"slider.horizontal.3"];
+                cell.imageView.tintColor = cell.textLabel.textColor;
             }
             if (indexPath.row == 1) {
                 cell.textLabel.text = @"Custom LowContrastMode Color";
-		            cell.imageView.image = [UIImage systemImageNamed:@"drop.fill"];
-  	          	cell.imageView.tintColor = cell.textLabel.textColor;
+                cell.imageView.image = [UIImage systemImageNamed:@"drop.fill"];
+                cell.imageView.tintColor = cell.textLabel.textColor;
             }
         }
         if (indexPath.section == 1) {
@@ -93,8 +92,8 @@
                 cache.textAlignment = NSTextAlignmentRight;
                 [cache sizeToFit];
                 cell.accessoryView = cache;
-	        cell.imageView.image = [UIImage systemImageNamed:@"trash"];
-  	        cell.imageView.tintColor = cell.textLabel.textColor;
+                cell.imageView.image = [UIImage systemImageNamed:@"trash"];
+                cell.imageView.tintColor = cell.textLabel.textColor;
             }
         }
     }
@@ -126,32 +125,33 @@
             UINavigationController *colourOptionsControllerView = [[UINavigationController alloc] initWithRootViewController:colourOptionsController];
             colourOptionsControllerView.modalPresentationStyle = UIModalPresentationFullScreen;
 
-            [self presentViewController:videoOptionsControllerView animated:YES completion:nil];
+            [self presentViewController:colourOptionsControllerView animated:YES completion:nil];
         }
         if (indexPath.row == 1) {
             ColourOptionsController2 *colourOptionsController2 = [[ColourOptionsController2 alloc] init];
             UINavigationController *colourOptionsController2View = [[UINavigationController alloc] initWithRootViewController:colourOptionsController2];
             colourOptionsController2View.modalPresentationStyle = UIModalPresentationFullScreen;
 
-            [self presentViewController:videoPlayerOptionsControllerView animated:YES completion:nil];
+            [self presentViewController:colourOptionsController2View animated:YES completion:nil];
         }
     }
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
-        activityIndicator.color = [UIColor labelColor];
-        [activityIndicator startAnimating];
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        cell.accessoryView = activityIndicator;
+            UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
+            activityIndicator.color = [UIColor labelColor];
+            [activityIndicator startAnimating];
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            cell.accessoryView = activityIndicator;
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-            [[NSFileManager defaultManager] removeItemAtPath:cachePath error:nil];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+                [[NSFileManager defaultManager] removeItemAtPath:cachePath error:nil];
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+                });
             });
-        });
+        }
     }
 }
 

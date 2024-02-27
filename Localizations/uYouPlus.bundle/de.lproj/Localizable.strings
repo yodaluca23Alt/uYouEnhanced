@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Autoplay-Schalter ausblenden";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Autoplay-Schalter vom Videoplayer ausblenden.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Untertitel-Button ausblenden";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Untertitel-Button vom Videoplayer ausblenden.";
 

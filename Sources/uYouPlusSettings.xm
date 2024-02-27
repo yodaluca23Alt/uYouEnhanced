@@ -1,12 +1,7 @@
-#import "../Tweaks/YouTubeHeader/YTSettingsViewController.h"
-#import "../Tweaks/YouTubeHeader/YTSearchableSettingsViewController.h"
-#import "../Tweaks/YouTubeHeader/YTSettingsSectionItem.h"
-#import "../Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
-#import "../Tweaks/YouTubeHeader/YTUIUtils.h"
-#import "../Tweaks/YouTubeHeader/YTSettingsPickerViewController.h"
+#import "uYouPlusSettings.h"
+#import "RootOptionsController.h"
 #import "ColourOptionsController.h"
 #import "ColourOptionsController2.h"
-#import "uYouPlus.h"
 
 #define VERSION_STRING [[NSString stringWithFormat:@"%@", @(OS_STRINGIFY(TWEAK_VERSION))] stringByReplacingOccurrencesOfString:@"\"" withString:@""]
 #define SHOW_RELAUNCH_YT_SNACKBAR [[%c(GOOHUDManagerInternal) sharedInstance] showMessageMainThread:[%c(YTHUDMessage) messageWithText:LOC(@"RESTART_YOUTUBE")]]
@@ -168,6 +163,16 @@ extern NSBundle *uYouPlusBundle();
                     }
                 ],
                 [YTSettingsSectionItemClass
+                    checkmarkItemWithTitle:LOC(@"Custom Dark Theme")
+                    titleDescription:LOC(@"In order to use Custom Themes that is in the uYouPlus Button, you will need to select this to be able to use custom colors.")
+                    selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                        [[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"appTheme"];
+                        [settingsViewController reloadData];
+                        SHOW_RELAUNCH_YT_SNACKBAR;
+                        return YES;
+                    }
+                ],
+                [YTSettingsSectionItemClass
                     switchItemWithTitle:LOC(@"OLED_KEYBOARD")
                     titleDescription:LOC(@"OLED_KEYBOARD_DESC")
                     accessibilityIdentifier:nil
@@ -208,8 +213,10 @@ extern NSBundle *uYouPlusBundle();
 
     SWITCH_ITEM(LOC(@"Enable Share Button"), LOC(@"Enable the Share Button in video controls overlay."), @"enableShareButton_enabled");
     SWITCH_ITEM(LOC(@"Enable 'Save To Playlist' Button"), LOC(@"Enable the 'Save To Playlist' Button in video controls overlay."), @"enableSaveToButton_enabled");
+    SWITCH_ITEM(LOC(@"HIDE_YTMUSIC_BUTTON"), LOC(@"HIDE_YTMUSIC_BUTTON_DESC"), @"hideYTMusicButton_enabled");
     SWITCH_ITEM(LOC(@"HIDE_AUTOPLAY_SWITCH"), LOC(@"HIDE_AUTOPLAY_SWITCH_DESC"), @"hideAutoplaySwitch_enabled");
     SWITCH_ITEM(LOC(@"HIDE_SUBTITLES_BUTTON"), LOC(@"HIDE_SUBTITLES_BUTTON_DESC"), @"hideCC_enabled");
+    SWITCH_ITEM(LOC(@"Hide Fullscreen Button"), LOC(@"Hides and Disables the Fullscreen Button in the Video Player."), @"disableFullscreenButton_enabled");
     SWITCH_ITEM(LOC(@"HIDE_HUD_MESSAGES"), LOC(@"HIDE_HUD_MESSAGES_DESC"), @"hideHUD_enabled");
     SWITCH_ITEM(LOC(@"HIDE_PAID_PROMOTION_CARDS"), LOC(@"HIDE_PAID_PROMOTION_CARDS_DESC"), @"hidePaidPromotionCard_enabled");
     SWITCH_ITEM2(LOC(@"HIDE_CHANNEL_WATERMARK"), LOC(@"HIDE_CHANNEL_WATERMARK_DESC"), @"hideChannelWatermark_enabled");
@@ -243,7 +250,7 @@ extern NSBundle *uYouPlusBundle();
     SWITCH_ITEM(LOC(@"Hide the Share Button under player"), LOC(@"Hides the Share Button under the video player."), @"hideShareButton_enabled");
     SWITCH_ITEM(LOC(@"Hide the Remix Button under player"), LOC(@"Hides the Remix Button under the video player."), @"hideRemixButton_enabled");
     SWITCH_ITEM(LOC(@"Hide the Thanks Button under player"), LOC(@"Hides the Thanks Button under the video player."), @"hideThanksButton_enabled");
-    SWITCH_ITEM(LOC(@"Hide the Download Button under player"), LOC(@"Hides the Download Button under the video player."), @"hideAddToOfflineButton_enabled");
+    SWITCH_ITEM(LOC(@"Hide the Download Button under player"), LOC(@"Hides the Download Button under the video player."), @"hideDownloadButton_enabled");
     SWITCH_ITEM(LOC(@"Hide the Clip Button under player"), LOC(@"Hides the Clip Button under the video player."), @"hideClipButton_enabled");
     SWITCH_ITEM(LOC(@"Hide the Save to playlist Button under player"), LOC(@"Hides the Save to playlist Button under the video player."), @"hideSaveToPlaylistButton_enabled");
     SWITCH_ITEM(LOC(@"Hide the comment section under player"), LOC(@"Hides the Comment Section below the player."), @"hideCommentSection_enabled");
@@ -1052,7 +1059,6 @@ extern NSBundle *uYouPlusBundle();
 //  SWITCH_ITEM(LOC(@"Center YouTube Logo"), LOC(@"Toggle this to move the official YouTube Logo to the Center. App restart is required."), @"centerYouTubeLogo_enabled");
     SWITCH_ITEM(LOC(@"Hide YouTube Logo"), LOC(@"Toggle this to hide the YouTube Logo in the YouTube App."), @"hideYouTubeLogo_enabled");
     SWITCH_ITEM(LOC(@"ENABLE_YT_STARTUP_ANIMATION"), LOC(@"ENABLE_YT_STARTUP_ANIMATION_DESC"), @"ytStartupAnimation_enabled");
-    SWITCH_ITEM(LOC(@"CAST_CONFIRM"), LOC(@"CAST_CONFIRM_DESC"), @"castConfirm_enabled");
     SWITCH_ITEM(LOC(@"DISABLE_HINTS"), LOC(@"DISABLE_HINTS_DESC"), @"disableHints_enabled");
     SWITCH_ITEM(LOC(@"Stick Navigation Bar"), LOC(@"Enable to make the Navigation Bar stay on the App when scrolling."), @"stickNavigationBar_enabled");
     SWITCH_ITEM2(LOC(@"HIDE_ISPONSORBLOCK"), nil, @"hideSponsorBlockButton_enabled");

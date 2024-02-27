@@ -12,10 +12,8 @@
     self.title = @"Theme Custom Color";
     
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(close)];
-    self.navigationItem.rightBarButtonItem = closeButton;
-
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
-    self.navigationItem.rightBarButtonItem = saveButton;
+    self.navigationItem.rightBarButtonItems = @[closeButton, saveButton];
 
     UIBarButtonItem *resetButton = [[UIBarButtonItem alloc] initWithTitle:@"Reset" style:UIBarButtonItemStylePlain target:self action:@selector(reset)];
     self.navigationItem.leftBarButtonItem = resetButton;
@@ -30,7 +28,6 @@
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
     [super traitCollectionDidChange:previousTraitCollection];
-    [self coloursView];
 }
 
 @end

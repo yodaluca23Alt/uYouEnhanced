@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Masquer l'interrupteur de lecture automatique";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Masquer le bouton de lecture automatique dans la superposition des contrôles vidéo";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Bouton de masquage des sous-titres";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Masquer le bouton des sous-titres dans la superposition des contrôles vidéo";
 

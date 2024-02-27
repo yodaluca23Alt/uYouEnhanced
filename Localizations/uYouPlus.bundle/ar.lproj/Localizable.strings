@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "إخفاء زر التشغيل التلقائي";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "إخفاء زر التشغيل التلقائي من أزرار التحكم على الفيديو.";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "إخفاء زر الترجمة";
 "HIDE_SUBTITLES_BUTTON_DESC" = "إخفاء زر الترجمة من أزرار التحكم على الفيديو.";
 

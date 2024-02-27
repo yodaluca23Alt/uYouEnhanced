@@ -57,6 +57,9 @@
 "HIDE_AUTOPLAY_SWITCH" = "Κρύψτε τον διακόπτη της αυτόματης αναπαραγωγής";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Κρύψτε τον διακόπτη της αυτόματης αναπαραγωγής κατά την αναπαραγωγή βίντεο";
 
+"HIDE_YTMUSIC_BUTTON" = "Hide Youtube Music button";
+"HIDE_YTMUSIC_BUTTON_DESC" = "Hides Youtube Music button that appears with Premium";
+
 "HIDE_SUBTITLES_BUTTON" = "Κρύψτε το κουμπί των Υπότιτλων";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Κρύψτε το κουμπί των Υπότιτλων κατά την αναπαραγωγή βίντεο.";
 
