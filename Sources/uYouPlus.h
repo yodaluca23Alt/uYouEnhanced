@@ -31,13 +31,13 @@
 #import "Tweaks/YouTubeHeader/YTPivotBarItemView.h"
 
 // Hide buttons under the video player by @PoomSmart
-#import <YouTubeHeader/ASCollectionElement.h>
-#import <YouTubeHeader/ASCollectionView.h>
-#import <YouTubeHeader/ELMNodeController.h>
+#import "Tweaks/YouTubeHeader/ASCollectionElement.h"
+#import "Tweaks/YouTubeHeader/ASCollectionView.h"
+#import "Tweaks/YouTubeHeader/ELMNodeController.h"
 
 // YouTube-X
 #import "Tweaks/YouTubeHeader/YTVideoWithContextNode.h"
-#import "Tweaks/YouTubeHeader/ELMCellNode.h" // YouTube-X
+#import "Tweaks/YouTubeHeader/ELMCellNode.h"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define IS_ENABLED(k) [[NSUserDefaults standardUserDefaults] boolForKey:k]
