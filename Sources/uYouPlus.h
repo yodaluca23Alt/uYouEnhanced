@@ -11,19 +11,14 @@
 #import "uYouPlusThemes.h"
 #import "Tweaks/YouTubeHeader/YTAppDelegate.h"
 #import "Tweaks/YouTubeHeader/YTIMenuConditionalServiceItemRenderer.h"
-#import "Tweaks/YouTubeHeader/YTQTMButton.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
-#import "Tweaks/YouTubeHeader/YTWatchController.h"
 #import "Tweaks/YouTubeHeader/YTIGuideResponse.h"
 #import "Tweaks/YouTubeHeader/YTIGuideResponseSupportedRenderers.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarSupportedRenderers.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarItemRenderer.h"
-#import "Tweaks/YouTubeHeader/YTIPivotBarRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
 #import "Tweaks/YouTubeHeader/YTIButtonRenderer.h"
 #import "Tweaks/YouTubeHeader/YTISectionListRenderer.h"
-#import "Tweaks/YouTubeHeader/YTColorPalette.h"
-#import "Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
 #import "Tweaks/YouTubeHeader/YTReelWatchPlaybackOverlayView.h"
@@ -88,10 +83,6 @@
 @interface YTPlaybackButton : UIControl
 @end
 
-@interface YTSegmentableInlinePlayerBarView
-@property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
-@end
-
 @interface YTPlaylistHeaderViewController : UIViewController
 @property UIButton *downloadsButton;
 @end
@@ -151,8 +142,6 @@
 + (UIColor *)blackPure;
 + (UIColor *)grey1;
 + (UIColor *)grey2;
-+ (UIColor *)white1Alpha98;
-+ (UIColor *)white1Alpha95;
 @end
 
 @interface YTPageStyleController
@@ -163,9 +152,6 @@
 @end
 
 @interface ELMView : UIView
-@end
-
-@interface _ASDisplayView : UIView
 @end
 
 @interface ELMContainerNode : NSObject

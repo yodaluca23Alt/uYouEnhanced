@@ -1,14 +1,6 @@
+#import "../Tweaks/YouTubeHeader/YTColorPalette.h"
 #import "../Tweaks/YouTubeHeader/YTCommonColorPalette.h"
 #import "uYouPlus.h"
-
-@interface YTSingleVideoController : NSObject
--(float)playbackRate;
--(void)setPlaybackRate:(float)arg1;
-@end
-
-@interface YTPlayerViewController : UIViewController
--(YTSingleVideoController *)activeVideo;
-@end
 
 @interface PlayerManager : NSObject
 // Prevent uYou player bar from showing when not playing downloaded media

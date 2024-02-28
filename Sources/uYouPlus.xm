@@ -602,7 +602,24 @@ static NSString *accessGroupID() {
 }
 %end
 
-// Hide Fullscreen Button
+// Hide Video Player Collapse Button - @arichornlover
+%hook YTMainAppControlsOverlayView
+- (void)layoutSubviews {
+    %orig;   
+    if (IS_ENABLED(@"disableCollapseButton_enabled")) {
+        if (self.watchCollapseButton) {
+            [self.watchCollapseButton removeFromSuperview];
+        }
+    }
+}
+- (BOOL)watchCollapseButtonHidden {
+    return YES;
+}
+- (void)setWatchCollapseButtonAvailable:(BOOL)available {
+}
+%end
+
+// Hide Fullscreen Button - @arichornlover
 %hook YTInlinePlayerBarContainerView
 - (void)layoutSubviews {
     %orig; 
