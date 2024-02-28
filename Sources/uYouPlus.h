@@ -10,6 +10,7 @@
 
 #import "uYouPlusThemes.h"
 #import "Tweaks/YouTubeHeader/YTAppDelegate.h"
+#import "Tweaks/YouTubeHeader/YTIMenuConditionalServiceItemRenderer.h"
 #import "Tweaks/YouTubeHeader/YTQTMButton.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTWatchController.h"
@@ -26,13 +27,13 @@
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
 #import "Tweaks/YouTubeHeader/YTReelWatchPlaybackOverlayView.h"
-#import "Tweaks/YouTubeHeader/YTReelPlayerBottomButton.h"
-#import "Tweaks/YouTubeHeader/YTReelPlayerViewController.h"
-#import "Tweaks/YouTubeHeader/YTIMenuConditionalServiceItemRenderer.h"
 #import "Tweaks/YouTubeHeader/YTInlinePlayerBarContainerView.h"
 #import "Tweaks/YouTubeHeader/YTPivotBarItemView.h"
+
 // Hide buttons under the video player by @PoomSmart
-#import "Tweaks/YouTubeHeader/ASCollectionElement.h"
+#import <YouTubeHeader/ASCollectionElement.h>
+#import <YouTubeHeader/ASCollectionView.h>
+#import <YouTubeHeader/ELMNodeController.h>
 
 // YouTube-X
 #import "Tweaks/YouTubeHeader/YTVideoWithContextNode.h"
