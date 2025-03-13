@@ -71,7 +71,7 @@ SWITCH3(
 );
 */
 
-static void ResetNetworkSettings() { // "Refresh Connection"
+static void ResetNetworkSettings() {
     NSURLSession *session = [NSURLSession sharedSession];
     [session invalidateAndCancel];
     [session resetWithCompletionHandler:^{
@@ -972,7 +972,6 @@ NSString *cacheDescription = [NSString stringWithFormat:@"%@", GetCacheSize()];
                 SPOOFER_VERSION(@"v20.03.1", 6),
                 SPOOFER_VERSION(@"v20.03.02", 7),
                 SPOOFER_VERSION(@"v20.02.3", 8),
-
                 SPOOFER_VERSION(@"v19.49.7", 9),
                 SPOOFER_VERSION(@"v19.49.5", 10),
                 SPOOFER_VERSION(@"v19.49.3", 11),
