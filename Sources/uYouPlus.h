@@ -308,11 +308,6 @@ static NSString *const kGoogleSigninFix = @"googleSigninFix_enabled";
 - (void)settingsAction;
 @end
 
-// YTSpeed
-@interface YTVarispeedSwitchControllerOption : NSObject
-- (id)initWithTitle:(id)title rate:(float)rate;
-@end
-
 @interface MLHAMQueuePlayer : NSObject
 @property id playerEventCenter;
 @property id delegate;
