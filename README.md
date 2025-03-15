@@ -297,13 +297,13 @@
   - NEWS - Nov 27 2024: Please be aware that some of the **uYou** features aren't working in newer versions of YouTube.
 
 <details>
-  <summary>Version information (last updated: Mar 14, 2025)</summary>
+  <summary>Version information (last updated: Mar 15, 2025)</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
 | **YouTube** | Google Inc | 20.10.4 | ✖︎ |
 | [uYou](https://github.com/MiRO92/uYou-for-YouTube) | [MiRO92](https://twitter.com/miro92) | 3.0.4 | ✖︎ |
-| **Open in YouTube** | [CokePokes](https://github.com/CokePokes) | 1.2 | [✔︎](https://github.com/CokePokes/YoutubeExtensions) |
+| **OpenYoutubeAndShorts** | [CrossiDev-Studio](https://github.com/CrossiDev-Studio) | 1.0 | [✔︎](https://github.com/CrossiDev-Studio/OpenYoutubeAndShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2.9 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
@@ -330,7 +330,7 @@
 | **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.3.0 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
 | **YouGroupSettings** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.3 | [✔︎](https://github.com/PoomSmart/YouGroupSettings) |
 | **YTHoldForSpeed** | [joshuaseltzer](https://github.com/joshuaseltzer) | 1.2.3 | [✔︎](https://github.com/joshuaseltzer/YTHoldForSpeed) |
-| **LowContrastMode** | [arichornlover](https://github.com/arichornlover) | 1.5.2 | [✔︎](https://github.com/arichornlover/YTLowContrastMode) |
+| **LowContrastMode (Broken Tweak)** | [arichornlover](https://github.com/arichornlover) | 1.5.2 | [✔︎](https://github.com/arichornlover/YTLowContrastMode) |
 
 </details>
 
@@ -341,8 +341,8 @@
 | MiRO92 | uYou 2.1 / 2.3~1 | ~v16.42.3~ ~v17.33.2 - 18.01.6~ | iOS 13.0 - iOS 15.8.3 |
 | MiRO92 | uYou 3.0 | ~v18.06.6 - v18.18.2~ | iOS 14.0 - iOS 15.8.3 |
 | MiRO92 | uYou 3.0.1 | ~v18.19.1 - v18.41.5~ | iOS 14.0 - iOS 18.3.2 |
-| MiRO92 | uYou 3.0.2 / 3.0.3 | v19.06.2 - v19.15.1 | iOS 14.0 - iOS 18.3.2 |
-| MiRO92 | uYou 3.0.4 | v19.20.2 - v19.22.6 | iOS 14.0 - 18.3.2 |
+| MiRO92 | uYou 3.0.2 / 3.0.3 | v19.06.2 - v19.15.1 | iOS 15.0 - iOS 18.3.2 |
+| MiRO92 | uYou 3.0.4 | v19.20.2 - v19.22.6 | iOS 15.0 - iOS 18.3.2 |
 
 # Building
 
