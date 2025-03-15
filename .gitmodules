@@ -33,7 +33,7 @@
     url = https://github.com/dayanch96/uYouLocalization.git
 [submodule "Tweaks/YouGroupSettings"]
     path = Tweaks/YouGroupSettings
-    url = https://github.com/arichornloverALT/YouGroupSettings.git
+    url = https://github.com/PoomSmart/YouGroupSettings.git
 [submodule "Tweaks/YouLoop"]
     path = Tweaks/YouLoop
     url = https://github.com/aricloverEXALT/YouLoop.git
