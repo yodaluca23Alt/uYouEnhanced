@@ -147,7 +147,6 @@ static NSString *const kHidePremiumPromos = @"hidePremiumPromos_enabled";
 static NSString *const kHideHomeTab = @"hideHomeTab_enabled";
 static NSString *const kLowContrastMode = @"lowContrastMode_enabled";
 static NSString *const kClassicVideoPlayer = @"classicVideoPlayer_enabled";
-static NSString *const kFixLowContrastMode = @"fixLowContrastMode_enabled";
 static NSString *const kDisableModernButtons = @"disableModernButtons_enabled";
 static NSString *const kDisableRoundedHints = @"disableRoundedHints_enabled";
 static NSString *const kDisableModernFlags = @"disableModernFlags_enabled";
