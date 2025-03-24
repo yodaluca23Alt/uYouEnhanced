@@ -71,12 +71,6 @@ SWITCH3(
 );
 */
 
-static void ResetNetworkSettings() {
-    NSURLSession *session = [NSURLSession sharedSession];
-    [session invalidateAndCancel];
-    [session resetWithCompletionHandler:^{
-    }];
-}
 static NSString *GetCacheSize() { // YTLite - @dayanch96
     NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
     NSArray *filesArray = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:cachePath error:nil];
