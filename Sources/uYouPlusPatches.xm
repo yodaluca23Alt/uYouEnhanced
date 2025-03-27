@@ -6,10 +6,39 @@
 %group gGoogleSignInPatch
 %hook NSBundle
 - (NSDictionary *)infoDictionary {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL patchEnabled = [defaults boolForKey:@"kGoogleSignInPatch"];
+    if (!patchEnabled) {
+        return %orig;
+    }
+    NSInteger restartCount = [defaults integerForKey:@"kGoogleSignInPatchRestartCount"];
+    if (restartCount >= 2) {
+        [defaults setBool:NO forKey:@"kGoogleSignInPatch"];
+        [defaults synchronize];
+        return %orig;
+    }
+    [defaults setInteger:restartCount + 1 forKey:@"kGoogleSignInPatchRestartCount"];
+    [defaults synchronize];
+    BOOL crashDetected = [defaults boolForKey:@"kGoogleSignInPatchCrashFlag"];
+    if (crashDetected) {
+        [defaults setBool:NO forKey:@"kGoogleSignInPatchCrashFlag"];
+        [defaults setBool:NO forKey:@"kGoogleSignInPatch"];
+        [defaults synchronize];
+        return %orig;
+    }
     NSMutableDictionary *info = %orig.mutableCopy;
-    if ([self isEqual:NSBundle.mainBundle])
+    if ([self isEqual:NSBundle.mainBundle]) {
         info[@"CFBundleIdentifier"] = @"com.google.ios.youtube";
+    }
     return info;
+}
+%end
+%hook NSException
++ (void)raise:(NSException *)exception {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:YES forKey:@"kGoogleSignInPatchCrashFlag"];
+    [defaults synchronize];
+    %orig(exception);
 }
 %end
 %end
