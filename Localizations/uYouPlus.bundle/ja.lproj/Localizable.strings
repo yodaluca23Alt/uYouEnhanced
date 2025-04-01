@@ -1,15 +1,15 @@
 // About
-"ABOUT" = "アプリについて";
+"ABOUT" = "情報";
 
 "VERSION" = "バージョン";
-"VERSION_CHECK" = "ここをタップしてアップデートを確認！";
+"VERSION_CHECK" = "ここをタップしてアップデートを確認";
 
 "REPORT_AN_ISSUE" = "不具合を報告";
-"ADD_TITLE" = "タイトルをここに追加...";
+"ADD_TITLE" = "タイトルをここに追加…";
 
-"QUIT_YOUTUBE" = "YouTubeを終了";
+"QUIT_YOUTUBE" = "YouTube を終了";
 
-"RESTART_YOUTUBE" = "変更を適用するためにYouTubeを再起動";
+"RESTART_YOUTUBE" = "変更を適用するために YouTube を再起動します";
 
 // App appearance
 "APP_THEME" = "🎨 アプリのテーマ";
@@ -18,16 +18,16 @@
 "DARK_THEME" = "ダークテーマ";
 
 "DEFAULT_THEME" = "デフォルト";
-"DEFAULT_THEME_DESC" = "";
+"DEFAULT_THEME_DESC" = "デフォルトのテーマ";
 
 "OLD_DARK_THEME" = "明るいグレー";
-"OLD_DARK_THEME_DESC" = "以前のダークテーマ";
+"OLD_DARK_THEME_DESC" = "古いダークテーマ";
 
 "OLED_DARK_THEME" = "OLED (実験的)";
 "OLED_DARK_THEME_2" = "OLED";
 "OLED_DARK_THEME_DESC" = "純粋な黒のダークテーマ";
 
-"OLED_KEYBOARD" = "OLEDキーボード (実験的)";
+"OLED_KEYBOARD" = "OLED キーボード (実験的)";
 "OLED_KEYBOARD_DESC" = "";
 
 // Video player options
@@ -37,28 +37,31 @@
 "SLIDE_TO_SEEK_DESC" = "スライドシークジェスチャーを有効にします。";
 
 "DISABLE_DOUBLE_TAP_TO_SEEK" = "ダブルタップシークを無効化";
-"DISABLE_DOUBLE_TAP_TO_SEEK_DESC" = "";
+"DISABLE_DOUBLE_TAP_TO_SEEK_DESC" = "ダブルタップシークを無効にします。";
 
 "SNAP_TO_CHAPTER" = "チャプターに合わせてのスクラブを無効化";
 "SNAP_TO_CHAPTER_DESC" = "動画を飛ばす際にチャプターに沿ってスクラブされるのを無効にします。";
 
 "PINCH_TO_ZOOM" = "ピンチで拡大を無効化";
-"PINCH_TO_ZOOM_DESC" = "";
+"PINCH_TO_ZOOM_DESC" = "動画をピンチして拡大する機能を無効化します。";
 
-"YT_MINIPLAYER" = "すべての動画でミニプレーヤーを有効にする";
-"YT_MINIPLAYER_DESC" = "ミニプレーヤーが使えない動画(子ども向けの動画など)がありますが、このオプションでバイパスできます。";
+"YT_MINIPLAYER" = "すべての動画でミニプレーヤーを有効化";
+"YT_MINIPLAYER_DESC" = "ミニプレーヤーで再生できない動画(子ども向けの動画など)を再生できるようにします。";
 
-"HIDE_REMIX_BUTTON" = "リミックスボタンを非表示";
+"HIDE_REMIX_BUTTON" = "「リミックス」ボタンを非表示";
 "HIDE_REMIX_BUTTON_DESC" = "";
 
-"HIDE_CLIP_BUTTON" = "クリップボタンを非表示";
+"HIDE_CLIP_BUTTON" = "「クリップ」ボタンを非表示";
 "HIDE_CLIP_BUTTON_DESC" = "";
 
-"HIDE_DOWNLOAD_BUTTON" = "オフラインボタンを非表示";
+"HIDE_DOWNLOAD_BUTTON" = "「オフライン」ボタンを非表示";
 "HIDE_DOWNLOAD_BUTTON_DESC" = "";
 
-"STOCK_VOLUME_HUD" = "標準の音量HUDを利用する";
+"STOCK_VOLUME_HUD" = "iOS 標準の音量 HUD を使用";
 "STOCK_VOLUME_HUD_DESC" = "";
+
+"REPLACE_YT_DOWNLOAD_WITH_UYOU" = "YouTube のダウンロード機能を置換";
+"REPLACE_YT_DOWNLOAD_WITH_UYOU_DESC" = "YouTube のダウンロード機能を uYou のものに置き換えます。";
 
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "📹 動画コントロールのオーバーレイ設定";
@@ -69,59 +72,59 @@
 "HIDE_SUBTITLES_BUTTON" = "字幕ボタンを非表示";
 "HIDE_SUBTITLES_BUTTON_DESC" = "";
 
-"HIDE_HUD_MESSAGES" = "HUDメッセージを非表示";
+"HIDE_HUD_MESSAGES" = "HUD メッセージを非表示";
 "HIDE_HUD_MESSAGES_DESC" = "特定のアクション後に表示されるスナックバーを非表示にします。(例: 字幕がオン/オフになりました など)";
 
-"HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションカードを非表示";
+"HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションバナーを非表示";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "";
 
 "HIDE_CHANNEL_WATERMARK" = "チャンネルのウォーターマークを非表示";
 "HIDE_CHANNEL_WATERMARK_DESC" = "";
 
-"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前へ/次へボタンを非表示";
-"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前の動画に戻る / 次の動画に進むボタンを非表示";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "プレイリストを含む全ての動画から非表示にします。";
 
-"REPLACE_PREVIOUS_NEXT_BUTTON" = "前へ/次へボタンを置き換える";
-"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "前へ/次へボタンを早送り/巻き戻しボタンに置き換えます。";
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "早送り/巻き戻しボタンに置換";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "前の動画に戻る/次の動画に進むボタンを早送り/巻き戻しボタンに置き換えます。";
 
 "RED_PROGRESS_BAR" = "赤いプログレスバー";
-"RED_PROGRESS_BAR_DESC" = "";
+"RED_PROGRESS_BAR_DESC" = "プログレスバーの色を赤に変更します。";
 
 "HIDE_HOVER_CARD" = "YTNoHoverCards";
 "HIDE_HOVER_CARD_DESC" = "動画のエンドスクリーンを非表示にします。";
 
-"HIDE_RIGHT_PANEL" = "フルスクリーン時の右側パネルを非表示";
-"HIDE_RIGHT_PANEL_DESC" = "横向きの時、右パネル(チャットなど)を非表示にします。";
+"HIDE_RIGHT_PANEL" = "全画面表示時の右側パネルを非表示";
+"HIDE_RIGHT_PANEL_DESC" = "全画面表示で、右パネル(概要欄やチャットなど)を非表示にします。";
 
 // Shorts controls overlay options
-"SHORTS_CONTROLS_OVERLAY_OPTIONS" = "💥 ショート動画のオーバーレイ設定";
+"SHORTS_CONTROLS_OVERLAY_OPTIONS" = "💥 ショートのオーバーレイ設定";
 
-"HIDE_SUPER_THANKS" = "「Super Thanksを購入」バナーを非表示";
+"HIDE_SUPER_THANKS" = "「Super Thanks を購入」バナーを非表示";
 "HIDE_SUPER_THANKS_DESC" = "";
 
-"HIDE_SUBCRIPTIONS" = "チャンネル登録ボタンを非表示";
+"HIDE_SUBCRIPTIONS" = "「チャンネル登録」ボタンを非表示";
 "HIDE_SUBCRIPTIONS_DESC" = "";
 
-"DISABLE_RESUME_TO_SHORTS" = "ショート動画からの再開を無効化";
-"DISABLE_RESUME_TO_SHORTS_DESC" = "ショート動画を視聴中にアプリを終了し、再度開いた際にショートから再開されるのを防ぎます。";
+"DISABLE_RESUME_TO_SHORTS" = "ショートの再開を無効化";
+"DISABLE_RESUME_TO_SHORTS_DESC" = "ショートを視聴中にアプリを終了し、再度開いた際にショートが再開されるのを防ぎます。";
 
 // Miscellaneous
 "MISCELLANEOUS" = "🔎 その他";
 
-"HIDE_UYOU" = "uYouタブを非表示";
-"HIDE_ISPONSORBLOCK" = "iSponsorBlockボタンを非表示";
+"HIDE_UYOU" = "uYou タブを非表示";
+"HIDE_ISPONSORBLOCK" = "iSponsorBlock ボタンを非表示";
 
 "CAST_CONFIRM" = "YTCastConfirm";
-"CAST_CONFIRM_DESC" = "キャスト前に確認の警告を表示します。";
+"CAST_CONFIRM_DESC" = "キャストする前に確認の警告を表示します。";
 "CASTING" = "キャスト";
-"MSG_ARE_YOU_SURE" = "本当にキャストを開始しますか？";
+"MSG_ARE_YOU_SURE" = "キャストを開始しますか？";
 "MSG_YES" = "はい";
-"MSG_CANCEL" = "いいえ";
+"MSG_CANCEL" = "キャンセル";
 
 "DISABLE_HINTS" = "ヒントを非表示";
-"DISABLE_HINTS_DESC" = "アプリ初回起動時に表示されるYouTubeのヒントを非表示にします。";
+"DISABLE_HINTS_DESC" = "アプリ初回起動時に表示される YouTube のヒントを非表示にします。";
 
-"ENABLE_YT_STARTUP_ANIMATION" = "YouTube起動時にアニメーションを表示";
+"ENABLE_YT_STARTUP_ANIMATION" = "YouTube 起動時にアニメーションを表示";
 "ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示";
@@ -130,58 +133,60 @@
 "HIDE_PLAY_NEXT_IN_QUEUE" = "「キューの最初に追加」を非表示";
 "HIDE_PLAY_NEXT_IN_QUEUE_DESC" = "";
 
-"IPHONE_LAYOUT" = "iPhoneのレイアウトを強制";
+"IPHONE_LAYOUT" = "iPhone のレイアウトを強制";
 "IPHONE_LAYOUT_DESC" = "";
 
 "NEW_MINIPLAYER_STYLE" = "BigYTMiniPlayer";
-"NEW_MINIPLAYER_STYLE_DESC" = "新しいミニプレーヤーバー";
+"NEW_MINIPLAYER_STYLE_DESC" = "新しいミニプレーヤーバーのスタイル";
 
 "YT_RE_EXPLORE" = "YTReExplore";
-"YT_RE_EXPLORE_DESC" = "ショートタブを探索タブに置き換えます。";
+"YT_RE_EXPLORE_DESC" = "[ショート] タブを[探索] タブに置き換えます。";
 
-"ENABLE_FLEX" = "FLEXを有効化";
-"ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効にします。";
+"ENABLE_FLEX" = "FLEX を有効化";
+"ENABLE_FLEX_DESC" = "デバッグ用の FLEX を有効にします。";
 
-"FIX_GOOGLE_SIGNIN" = "Googleのサインインを修正 (TrollStoreユーザーのみ)";
-"FIX_GOOGLE_SIGNIN_DESC" = "Googleアカウントでサインインできない場合で、アプリがTrollStore経由でインストールされている場合のみ、このオプションをオンにしてください。通常通りサインインできる場合はオフのままにしてください。アプリの再起動が必要です。";
+"FIX_GOOGLE_SIGNIN" = "Google のログインを修正 (TrollStoreユーザーのみ)";
+"FIX_GOOGLE_SIGNIN_DESC" = "Google アカウントでログインできず、かつアプリが TrollStore 経由でインストールした場合にのみ、このオプションを有効にしてください。正常にログインできる場合は、無効のままにしてください。アプリの再起動が必要です。";
 
 // uYouEnhanced Localization ➕
-"SUPPORT_THE_DEVELOPERS" = "開発者を支援する";
+"SUPPORT_THE_DEVELOPERS" = "開発者を支援";
 "COPY_SETTINGS" = "設定をコピー";
-"COPY_SETTINGS_DESC" = "現在のすべての設定をクリップボードにコピーします";
+"COPY_SETTINGS_DESC" = "現在のすべての設定をクリップボードにコピーします。";
 "PASTE_SETTINGS" = "設定を貼り付け";
-"PASTE_SETTINGS_DESC" = "クリップボードから設定を貼り付けて適用します";
-"EXPORT_SETTINGS" = "Export Settings";
-"EXPORT_SETTINGS_DESC" = "Exports all current settings into a .txt file";
-"IMPORT_SETTINGS" = "Import Settings";
-"IMPORT_SETTINGS_DESC" = "Press to import settings (.txt)";
-"REPLACE_COPY_AND_PASTE_BUTTONS" = "Replace 'Copy Settings' & 'Paste Settings' Buttons";
-"REPLACE_COPY_AND_PASTE_BUTTONS_DESC" = "Replaces the Buttons to 'Export Settings' and 'Import Settings'";
+"PASTE_SETTINGS_DESC" = "クリップボードから設定を貼り付けて適用します。";
+"EXPORT_SETTINGS" = "設定をエクスポート";
+"EXPORT_SETTINGS_DESC" = "現在のすべての設定を「.txt」ファイルにエクスポートします。";
+"IMPORT_SETTINGS" = "設定をインポート";
+"IMPORT_SETTINGS_DESC" = "タップして設定 (.txt) をインポートします";
+"REPLACE_COPY_AND_PASTE_BUTTONS" = "「設定をコピー」と「設定を貼り付け」ボタンを置換";
+"REPLACE_COPY_AND_PASTE_BUTTONS_DESC" = "「設定をコピー」と「設定を貼り付け」ボタンを置き換えます。";
 
-"UYOUENHANCED_ESSENTIAL_MENU" = "uYouEnhanced エクストラメニュー";
+"UYOUENHANCED_ESSENTIAL_MENU" = "uYouEnhanced 基本メニュー";
 "CHANGE_APP_ICON" = "アプリアイコンを変更";
-"CLEAR_NOTIFICATIONS" = "通知をクリア";
-"CLEAR_NOTIFICATIONS_DESC" = "すべてのアプリ通知を強制的にクリアします（サイドロード時に推奨）";
+"CLEAR_NOTIFICATIONS" = "通知を削除";
+"CLEAR_NOTIFICATIONS_DESC" = "すべてのアプリ通知を強制的に削除します(サイドロード時に推奨)";
 
 "CUSTOM_DARK_THEME" = "カスタムダークテーマ";
 
-"ENABLE_PORTRAIT_FULLSCREEN" = "縦向きフルスクリーンを有効化";
-"ENABLE_PORTRAIT_FULLSCREEN_DESC" = "YouTubeアプリで縦向きフルスクリーンを有効にします。アプリの再起動が必要です。";
+"ENABLE_PORTRAIT_FULLSCREEN" = "縦向きの全画面表示を有効化";
+"ENABLE_PORTRAIT_FULLSCREEN_DESC" = "縦向きの全画面表示を有効にします。アプリの再起動が必要です。";
+"FULLSCREEN_TO_THE_RIGHT" = "右向きに全画面表示";
+"FULLSCREEN_TO_THE_RIGHT_DESC" = "動画を常に右横向きで再生するように強制します。アプリの再起動が必要です";
 "ENABLE_TAP_TO_SEEK" = "タップしてシークを有効化";
-"ENABLE_TAP_TO_SEEK_DESC" = "シークバーを1回タップするだけでビデオ内の任意の場所にジャンプします。";
-"DISABLE_PULL_TO_FULLSCREEN_GESTURE" = "フルスクリーンへの引っ張りジェスチャーを無効化";
-"DISABLE_PULL_TO_FULLSCREEN_GESTURE_DESC" = "縦のフルスクリーンへ入るドラッグジェスチャーを無効にします。横向きのビデオにのみ適用されます。";
-"DISABLE_DOUBLE_TAP_TO_SKIP_CHAPTER" = "ダブルタップでチャプタースキップを無効化";
-"DISABLE_DOUBLE_TAP_TO_SKIP_CHAPTER_DESC" = "前方/後方にチャプターをスキップする2本指のダブルタップジェスチャーを無効にします。";
+"ENABLE_TAP_TO_SEEK_DESC" = "シークバーを 1 回タップして動画内の任意の場所にジャンプします。";
+"DISABLE_PULL_TO_FULLSCREEN_GESTURE" = "全画面表示への引っ張りジェスチャーを無効化";
+"DISABLE_PULL_TO_FULLSCREEN_GESTURE_DESC" = "縦の全画面表示へ入る引っ張りジェスチャーを無効にします。横向きの動画にのみ適用されます。";
+"DISABLE_DOUBLE_TAP_TO_SKIP_CHAPTER" = "ダブルタップでのチャプタースキップを無効化";
+"DISABLE_DOUBLE_TAP_TO_SKIP_CHAPTER_DESC" = "チャプターごとにスキップする 2 本指ダブルタップジェスチャーを無効にします。";
 "ALWAYS_USE_REMAINING_TIME" = "常に残り時間形式を使用";
-"ALWAYS_USE_REMAINING_TIME_DESC" = "プレーヤーバーに表示される時間表示のデフォルトを残り時間形式に変更します。";
+"ALWAYS_USE_REMAINING_TIME_DESC" = "プレーヤーバーに表示される時間表示を残り時間形式に変更します。";
 "DISABLE_TOGGLE_TIME_REMAINING" = "残り時間の切り替えを無効化";
 "DISABLE_TOGGLE_TIME_REMAINING_DESC" = "経過時間から残り時間への切り替えを無効にします。「常に残り時間形式を使用」オプションと一緒に使用してください。";
 
 "ENABLE_SHARE_BUTTON" = "共有ボタンを有効化";
-"ENABLE_SHARE_BUTTON_DESC" = "ビデオコントロールオーバーレイに共有ボタンを追加します。";
-"ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "再生リストに保存ボタンを有効化";
-"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "ビデオコントロールオーバーレイに再生リストに保存ボタンを追加します。";
+"ENABLE_SHARE_BUTTON_DESC" = "動画コントロールオーバーレイに「共有」ボタンを追加します。";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "「再生リストに保存」ボタンを有効化";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "動画コントロールオーバーレイに「再生リストに保存」ボタンを追加します。";
 "HIDE_YTMUSIC_BUTTON" = "Youtube Musicボタンを隠す";
 "HIDE_YTMUSIC_BUTTON_DESC" = "Youtubeプレミアムで表示されるYoutube Musicボタンを非表示にします。";
 "HIDE_VIDEO_TITLE_IN_FULLSCREEN" = "フルスクリーンでビデオタイトルを隠す";
@@ -254,6 +259,8 @@
 "LOW_CONTRAST_MODE_SELECTOR" = "低コントラストモードを選択";
 "LOW_CONTRAST_MODE_ERROR_1" = "あなたは、もはや動作しないYouTubeの廃止されたバージョンv%@を使用しています。低コントラストモードを使用するには、v17.33.2-17.38.10を使用してください。";
 "LOW_CONTRAST_MODE_ERROR_2" = "低コントラストモードはv17.33.2-v17.38.10でのみ利用可能です。\nあなたは現在、v%@を使用しています。\n回避策: これを使用したい場合は「低コントラストモードを修正」を有効にするのがおすすめです。";
+"CLASSIC_VIDEO_PLAYER" = "Classic Video Player";
+"CLASSIC_VIDEO_PLAYER_DESC" = "Restores the classic video player features from v16.xx.x, including pinch-to-fullscreen.";
 "FIX_LOWCONTRASTMODE" = "低コントラストモードを修正";
 "FIX_LOWCONTRASTMODE_DESC" = "YouTube v17.38.10に偽装することにより、低コントラストモードの機能を修正して有効化します。アプリの再起動が必要です。";
 "DISABLE_MODERN_BUTTONS" = "モダンなボタンを無効化";
@@ -270,13 +277,14 @@
 
 "ADBLOCK_WORKAROUND_LITE" = "AdBlock回避（Lite）";
 "ADBLOCK_WORKAROUND_LITE_DESC" = "弱い広告ブロックコードを使用します。uYouの広告ブロックオプションを無効にします。";
-"ADBLOCK_WORKAROUND" = "AdBlock回避";
+"ADBLOCK_WORKAROUND" = "AdBlock 回避策";
 "ADBLOCK_WORKAROUND_DESC" = "より強力な広告ブロックコードを使用します。";
 "FAKE_PREMIUM" = "偽のYoutubeプレミアム";
 "FAKE_PREMIUM_DESC" = "Youtubeプレミアムロゴを使用し、Youタブに偽のボタンを作成します。";
 "FAKE_PREMIUM_WARNING" = "*v%@にYou*タブは存在しないため、偽のボタンは作成されません。\nしかし、*偽のプレミアムロゴ*は引き続き機能します。";
 "FAKE_YOUR_PREMIUM_BENEFITS" = "あなたのプレミアム特典";
 "FAKE_DOWNLOADS" = "ダウンロード";
+"DISABLE_ANIMATED_YOUTUBE_LOGO" = "Disable Animated YouTube Logo";
 "CENTER_YOUTUBE_LOGO" = "YouTubeロゴを中央に";
 "CENTER_YOUTUBE_LOGO_DESC" = "公式YouTubeロゴを中央に配置します。アプリの再起動が必要です。";
 "HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示に";
@@ -293,6 +301,8 @@
 "HIDE_INDICATORS_DESC" = "アプリ内の現在のインジケーターをすべて非表示にします。";
 "FIX_CASTING" = "キャストを修正";
 "FIX_CASTING_DESC" = "キャストを修正するために、特定のA/Bテストフラグを変更します。";
+"NEW_SETTINGS_UI" = "Use New Settings UI";
+"NEW_SETTINGS_UI_DESC" = "Enables the new Settings UI with tweak categories.";
 
 "DEFAULT" = "デフォルト";
 "CUSTOM_COLOR" = "カスタムカラー";
