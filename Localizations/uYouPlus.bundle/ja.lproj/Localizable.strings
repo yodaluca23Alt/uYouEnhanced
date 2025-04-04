@@ -115,9 +115,9 @@
 "HIDE_ISPONSORBLOCK" = "iSponsorBlock ボタンを非表示";
 
 "CAST_CONFIRM" = "YTCastConfirm";
-"CAST_CONFIRM_DESC" = "キャストする前に確認の警告を表示します。";
-"CASTING" = "キャスト";
-"MSG_ARE_YOU_SURE" = "キャストを開始しますか？";
+"CAST_CONFIRM_DESC" = "Chrome キャストを開始する前に確認の警告を表示します。";
+"CASTING" = "Chrome キャスト";
+"MSG_ARE_YOU_SURE" = "Chrome キャストを開始しますか？";
 "MSG_YES" = "はい";
 "MSG_CANCEL" = "キャンセル";
 
@@ -140,7 +140,7 @@
 "NEW_MINIPLAYER_STYLE_DESC" = "新しいミニプレーヤーバーのスタイル";
 
 "YT_RE_EXPLORE" = "YTReExplore";
-"YT_RE_EXPLORE_DESC" = "[ショート] タブを[探索] タブに置き換えます。";
+"YT_RE_EXPLORE_DESC" = "「ショート」タブを「探索」タブに置き換えます。";
 
 "ENABLE_FLEX" = "FLEX を有効化";
 "ENABLE_FLEX_DESC" = "デバッグ用の FLEX を有効にします。";
@@ -253,7 +253,7 @@
 
 "UI_INTERFACE_OPTIONS" = "UI インターフェースの設定";
 
-"HIDE_HOME_TAB" = "[ホーム] タブを非表示";
+"HIDE_HOME_TAB" = "「ホームタブ」を非表示";
 "LOW_CONTRAST_MODE" = "低コントラストモード";
 "LOW_CONTRAST_MODE_DESC" = "テキストとボタンの色のコントラストを下げ、2020 年以前の YouTube アプリのインターフェースに近づけます。";
 "LOW_CONTRAST_MODE_SELECTOR" = "低コントラストモードを選択";
@@ -280,8 +280,8 @@
 "ADBLOCK_WORKAROUND" = "AdBlock 回避策";
 "ADBLOCK_WORKAROUND_DESC" = "より強力な広告ブロックコードを使用します。";
 "FAKE_PREMIUM" = "偽の YouTube Premium";
-"FAKE_PREMIUM_DESC" = "YouTube プレミアムロゴを使用し、[マイページ] タブに偽のボタンを作成します。";
-"FAKE_PREMIUM_WARNING" = "YouTube v%@ には[マイページ] タブが存在しないため、偽の YouTube Premium ボタンは作成されません。\nただし、*偽のYouTube Premium ロゴ*は引き続き機能します。";
+"FAKE_PREMIUM_DESC" = "YouTube プレミアムロゴを使用し、「マイページ」タブに偽のボタンを作成します。";
+"FAKE_PREMIUM_WARNING" = "YouTube v%@ には「マイページ」タブが存在しないため、偽の YouTube Premium ボタンは作成されません。\nただし、「偽のYouTube Premium ロゴ」は引き続き機能します。";
 "FAKE_YOUR_PREMIUM_BENEFITS" = "あなたのプレミアム特典";
 "FAKE_DOWNLOADS" = "ダウンロード";
 "DISABLE_ANIMATED_YOUTUBE_LOGO" = "アニメーション YouTube ロゴを無効化";
@@ -292,7 +292,7 @@
 "STICK_NAVIGATION_BAR" = "ナビゲーションバーを固定";
 "STICK_NAVIGATION_BAR_DESC" = "アプリ内をスクロールしてもナビゲーションバーが表示され続けます。";
 "HIDE_COMMUNITY_POSTS" = "コミュニティ投稿を非表示";
-"HIDE_COMMUNITY_POSTS_DESC" = "コミュニティの投稿を非表示にします。アプリの再起動が必要です。";
+"HIDE_COMMUNITY_POSTS_DESC" = "コミュニティ投稿を非表示にします。アプリの再起動が必要です。";
 "HIDE_HEADER_LINKS_UNDER_PROFILE" = "プロフィール下のヘッダーリンクを非表示";
 "HIDE_HEADER_LINKS_UNDER_PROFILE_DESC" = "チャンネルプロフィールの下にあるヘッダーリンクを非表示にします。";
 "AUTO_HIDE_HOME_INDICATOR" = "自動でホームインジケーターを非表示";
@@ -300,7 +300,7 @@
 "HIDE_INDICATORS" = "インジケーターを非表示";
 "HIDE_INDICATORS_DESC" = "アプリ内の現在のインジケーターをすべて非表示にします。";
 "FIX_CASTING" = "Chrome キャストを修正";
-"FIX_CASTING_DESC" = "キャストを修正するために、特定の A/B テストフラグを変更します。";
+"FIX_CASTING_DESC" = "Chrome キャストを修正するために、特定の A/B テストフラグを変更します。";
 "NEW_SETTINGS_UI" = "新しい設定 UI を使用";
 "NEW_SETTINGS_UI_DESC" = "カテゴリを調整した新しい設定 UI を有効にします。";
 
