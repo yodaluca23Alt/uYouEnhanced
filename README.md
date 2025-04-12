@@ -1,3 +1,15 @@
+## About the future of the uYouEnhanced Project (Apr 11, 2025)
+Hey everyone,
+
+Just wanted to give you an update about uYouEnhanced. I’m not fully leaving or anything, but I won’t be as hands-on as before. I’ll still drop some github commits now and then, but there’s no way I can ever get through and solve the 300+ known issues in this github repo.
+
+I do my best to fix stuff when issues pop up, but it sometimes usually doesn’t work out. I do even suggest workarounds, but they might not work perfectly, especially with the latest YouTube version changes.
+
+But as of writing this, I’d recommend using uYouEnhanced with YouTube version v20.05.4 (the ipa version I use).
+Thanks for understanding!
+
+And thanks to qnblackcat, PoomSmart & other developers allowing me to expand this fork from where it is today!
+
 <p align="center">
   <a href="https://user-images.githubusercontent.com/78001398/271790092-006e81cc-715a-4fbc-aff6-15832e2da8c4.png">
     <img src="https://user-images.githubusercontent.com/78001398/271790092-006e81cc-715a-4fbc-aff6-15832e2da8c4.png" alt="UYOUPLUS_LOGO" width="200" height="200">
