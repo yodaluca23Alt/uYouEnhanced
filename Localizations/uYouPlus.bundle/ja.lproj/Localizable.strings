@@ -115,9 +115,9 @@
 "HIDE_ISPONSORBLOCK" = "iSponsorBlock ボタンを非表示";
 
 "CAST_CONFIRM" = "YTCastConfirm";
-"CAST_CONFIRM_DESC" = "Chrome キャストを開始する前に確認の警告を表示します。";
-"CASTING" = "Chrome キャスト";
-"MSG_ARE_YOU_SURE" = "Chrome キャストを開始しますか？";
+"CAST_CONFIRM_DESC" = "キャストを開始する前に確認の警告を表示します。";
+"CASTING" = "キャスト";
+"MSG_ARE_YOU_SURE" = "キャストを開始しますか？";
 "MSG_YES" = "はい";
 "MSG_CANCEL" = "キャンセル";
 
@@ -299,8 +299,8 @@
 "AUTO_HIDE_HOME_INDICATOR_DESC" = "アプリとのインタラクションがない時に、iOS のホームインジケーターを自動的に非表示にします。";
 "HIDE_INDICATORS" = "インジケーターを非表示";
 "HIDE_INDICATORS_DESC" = "アプリ内の現在のインジケーターをすべて非表示にします。";
-"FIX_CASTING" = "Chrome キャストを修正";
-"FIX_CASTING_DESC" = "Chrome キャストを修正するために、特定の A/B テストフラグを変更します。";
+"FIX_CASTING" = "キャストを修正";
+"FIX_CASTING_DESC" = "キャストを修正するために、特定の A/B テストフラグを変更します。";
 "NEW_SETTINGS_UI" = "新しい設定 UI を使用";
 "NEW_SETTINGS_UI_DESC" = "カテゴリを調整した新しい設定 UI を有効にします。";
 
